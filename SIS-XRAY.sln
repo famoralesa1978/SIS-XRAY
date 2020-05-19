@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIS-XRAY", "SIS-XRAY\SIS-XRAY.csproj", "{7B12A6FC-802B-432B-A17F-A0EFD3315831}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConexionWeb", "..\..\..\FUENTES\LibreriaWeb\ConexionWeb\ConexionWeb.csproj", "{459DB8C8-4FA2-483E-8880-FE35360BE6EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B12A6FC-802B-432B-A17F-A0EFD3315831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B12A6FC-802B-432B-A17F-A0EFD3315831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B12A6FC-802B-432B-A17F-A0EFD3315831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B12A6FC-802B-432B-A17F-A0EFD3315831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{459DB8C8-4FA2-483E-8880-FE35360BE6EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{459DB8C8-4FA2-483E-8880-FE35360BE6EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{459DB8C8-4FA2-483E-8880-FE35360BE6EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{459DB8C8-4FA2-483E-8880-FE35360BE6EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {35EA892F-1B83-41F8-99F6-9091BCD10CEF}
+	EndGlobalSection
+EndGlobal
