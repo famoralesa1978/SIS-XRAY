@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Conexion;
+using Utilidades;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
@@ -14,6 +15,7 @@ namespace SIS_XRAY
     public partial class index : System.Web.UI.Page
     {
         clsConexion cn = new Conexion.clsConexion();
+        ClsDescriptarEncriptar encDesc = new ClsDescriptarEncriptar();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -34,7 +36,7 @@ namespace SIS_XRAY
             //pa_login_sel 
             SqlCommand cmd = new SqlCommand();
             DataSet ds;
-            cmd.CommandText = "pa_loginWeb_sel '" + usr + "','" + psw + "'";
+            cmd.CommandText = "pa_loginWeb_sel '" + usr + "','" + encDesc.GenerateHashMD5( psw) + "'";
             cmd.CommandType = CommandType.Text;
             string name = ConfigurationManager.AppSettings["ConnectionBD"];
             ds = cn.Listar(name, cmd,ref strMensaje);
