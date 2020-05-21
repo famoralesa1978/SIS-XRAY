@@ -43,25 +43,22 @@ namespace SIS_XRAY
 
             if (strMensaje == "OK")
             {
-                if (valido == true)
+                switch (ds.Tables[0].Rows.Count)
                 {
-                    TransferirSegunPerfil(usr);
-                }
-                else
-                {
-                    Page.ClientScript.RegisterStartupScript(this.GetType(), "alerta", "Mensaje();", true);
+                    case 0://el usuario  o contraseña no existe
+                        // System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('usuario y contraseña incorrecta');", true);
+                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                        break;
+                    case 1://cuando tiene un solo perfil asociado
+                        TransferirSegunPerfil(usr);
+                        break;
+                    default://cuando tiene mas perfiles asociado.
+                        // code block
+                        break;
                 }
             }
             else
             {
-             /*   System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                sb.Append("<script type = 'text/javascript'>");
-                sb.Append("window.onload=function(){");
-                sb.Append("alert('");
-                sb.Append(strMensaje);
-                sb.Append("')};");
-                sb.Append("</script>");
-                ClientScript.RegisterClientScriptBlock(this.GetType(), "alert", sb.ToString());*/
                 System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('" + strMensaje.Replace("'","") + "');", true);
             }
            

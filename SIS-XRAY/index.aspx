@@ -25,18 +25,18 @@
         <div class="form-group">
         	<div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <asp:TextBox ID="txtUsuario"  CssClass="form-control" ValidateRequestMode="Enabled" runat="server" MaxLength="50" placeholder="Usuario" required="required"></asp:TextBox>
+                <asp:TextBox ID="txtUsuario"  CssClass="form-control" ValidateRequestMode="Enabled" runat="server" MaxLength="50" placeholder="Usuario" required="required" ValidationGroup="Ingresar"></asp:TextBox>
             </div>
         </div>
 		<div class="form-group">
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                <asp:TextBox ID="txtPassword" CssClass="form-control" runat="server" TextMode="Password" MaxLength="50" placeholder="Contraseña" required="required"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" CssClass="form-control" runat="server" TextMode="Password" MaxLength="50" placeholder="Contraseña" required="required" ValidationGroup="Ingresar"></asp:TextBox>
             </div>
         </div>
         <br />        
         <div class="form-group">
-            <asp:Button ID="btnIngresar" CssClass="btn btn-primary login-btn btn-block" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" />
+            <asp:Button ID="btnIngresar" CssClass="btn btn-primary login-btn btn-block" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" ValidationGroup="Ingresar" />
         </div>
         <div class="clearfix">
             <i class="material-icons">lock_open</i>
@@ -45,14 +45,14 @@
         </div>
         <p class="text-center text-muted small">Visitanos en.. <a href="www.detodoautos.cl">www.susitioweb.cl</a></p>
         </div>
-
-        <div id="dialog-message" title="Error de Ingreso" style="display:none">
-          <p>
-            <span class="ui-icon ui-icon-circle-close" style="float:left; margin:0 7px 50px 0;"></span>
-            Usuario o contraseña incorrecta, vuelva a intentarlo.
-          </p>
+        <div class="modal fade" id="myModal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div id="dialog-message" title="Error de Ingreso" style="display:none">
+              <p>
+                <span class="ui-icon ui-icon-circle-close" style="float:left; margin:0 7px 50px 0;"></span>
+                Usuario o contraseña incorrecta, vuelva a intentarlo.
+              </p>
+            </div>
         </div>
-
         <div id="dialog-UsrNoExiste" title="Error de Ingreso" style="display:none">
           <p>
             <span class="ui-icon ui-icon-circle-close" style="float:left; margin:0 7px 50px 0;"></span>
