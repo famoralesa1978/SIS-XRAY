@@ -16,6 +16,7 @@ namespace SIS_XRAY
     {
         clsConexion cn = new Conexion.clsConexion();
         ClsDescriptarEncriptar encDesc = new ClsDescriptarEncriptar();
+        Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -50,7 +51,11 @@ namespace SIS_XRAY
                         ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
                         break;
                     case 1://cuando tiene un solo perfil asociado
-                        TransferirSegunPerfil(usr);
+                        //rut,Contraseña as clave,Id_perfil
+                        clsUsu.Usuario = usr;
+                        clsUsu.Id_perfil = Convert.ToInt16( ds.Tables[0].Rows[0]["Id_perfil"].ToString());
+                        // TransferirSegunPerfil(usr);
+                        Response.Redirect("Principal.aspx");
                         break;
                     default://cuando tiene mas perfiles asociado.
                         // code block
