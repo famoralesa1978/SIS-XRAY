@@ -32,9 +32,7 @@ namespace SIS_XRAY
 
             usr = txtUsuario.Text.ToString();
             psw = txtPassword.Text.ToString();
-
-          //  string Clave = clsUtiles1.GenerateHashMD5(txt_Contrasena.Text.Trim());
-            //pa_login_sel 
+       
             SqlCommand cmd = new SqlCommand();
             DataSet ds;
             cmd.CommandText = "pa_loginWeb_sel '" + usr + "','" + encDesc.GenerateHashMD5( psw) + "'";
