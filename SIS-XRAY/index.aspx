@@ -6,14 +6,14 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="Recursos/Css/Login.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"   rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
+	<link type="text/css" rel="stylesheet" href="../../Recursos/assets/css/theme-default/bootstrap.css?1422792965" />
+	<link type="text/css" rel="stylesheet" href="../../Recursos/assets/css/theme-default/materialadmin.css?1425466319" />
+	<link type="text/css" rel="stylesheet" href="../../Recursos/assets/css/theme-default/font-awesome.min.css?1422529194" />
+	<link type="text/css" rel="stylesheet" href="../../Recursos/assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
 </head>
-<body>
-    <form action="index.aspx" id="form1" runat="server" method="post">
-    <div class="login-form">
+<body class="menubar-hoverable header-fixed ">
+    <%--<div class="login-form">
         <div class="logo align-content-center">
             <img class="align-content-center" src="Recursos/Img/logoxr.jpg"/>
             <h4 class="text-center">Reportería X-Ray</h4> 
@@ -58,10 +58,59 @@
             <span class="ui-icon ui-icon-circle-close" style="float:left; margin:0 7px 50px 0;"></span>
             Usuario es valido, pero no se encuenta registrado en el sistema.
           </p>
-        </div>
-    </form>
-</body>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        </div>--%>
+        <section class="section-account">
+			<div class="img-backdrop" style="background-image: url('../../Recursos/assets/img/img16.jpg')"></div>
+			<div class="spacer"></div>
+			<div class="card contain-sm style-transparent">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-sm-6">
+							<br/>
+							<span class="text-lg text-bold text-primary">Sistema de Informe de xray</span>
+							<br/><br/>
+							<form  runat="server" class="form floating-label"  accept-charset="utf-8" method="post">
+								<div class="form-group">
+                                    <asp:TextBox ID="txtUsuario"  CssClass="form-control" ValidateRequestMode="Enabled" runat="server" MaxLength="50"  required="required" ValidationGroup="Ingresar"></asp:TextBox>
+									<label for="username">Ingrese su rut</label>
+								</div>
+								<div class="form-group">
+                                    <asp:TextBox ID="txtPassword" CssClass="form-control" runat="server" TextMode="Password" MaxLength="50"  required="required" ValidationGroup="Ingresar"></asp:TextBox>
+									<label for="password">Password</label>
+									<p class="help-block"><a href="#">Recordar contraseña?</a></p>
+								</div>
+								<br/>
+								<div class="row">
+									<div class="col-xs-6 text-left">
+										<div class="checkbox checkbox-inline checkbox-styled">
+											<label>
+												<input type="checkbox"> <span>Remember me</span>
+											</label>
+										</div>
+									</div><!--end .col -->
+									<div class="col-xs-6 text-right">
+                                        <asp:Button ID="btnIngresar" class="btn btn-primary btn-raised" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" ValidationGroup="Ingresar" />
+									</div><!--end .col -->
+								</div><!--end .row -->
+							</form>
+						</div><!--end .col -->
+					</div><!--end .row -->
+				</div><!--end .card-body -->
+			</div><!--end .card -->
+		</section>
+    <script src="../../Recursos/assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
+	<script src="../../Recursos/assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+	<script src="../../Recursos/assets/js/libs/bootstrap/bootstrap.min.js"></script>
+	<script src="../../Recursos/assets/js/libs/spin.js/spin.min.js"></script>
+	<script src="../../Recursos/assets/js/libs/autosize/jquery.autosize.min.js"></script>
+	<script src="../../Recursos/assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
+	<script src="../../Recursos/assets/js/core/source/App.js"></script>
+	<script src="../../Recursos/assets/js/core/source/AppNavigation.js"></script>
+	<script src="../../Recursos/assets/js/core/source/AppOffcanvas.js"></script>
+	<script src="../../Recursos/assets/js/core/source/AppCard.js"></script>
+	<script src="../../Recursos/assets/js/core/source/AppForm.js"></script>
+	<script src="../../Recursos/assets/js/core/source/AppNavSearch.js"></script>
+	<script src="../../Recursos/assets/js/core/source/AppVendor.js"></script>
+	<script src="../../Recursos/assets/js/core/demo/Demo.js"></script>
+</body>    
 </html>

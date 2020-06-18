@@ -46,7 +46,7 @@ namespace SIS_XRAY
                 {
                     case 0://el usuario  o contraseña no existe
                         // System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('usuario y contraseña incorrecta');", true);
-                        ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+                      //  ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
                         break;
                     case 1://cuando tiene un solo perfil asociado
                         //rut,Contraseña as clave,Id_perfil
@@ -67,34 +67,34 @@ namespace SIS_XRAY
            
         }
 
-        private void TransferirSegunPerfil(string usuario)
-        {
-            string Formulario;
-            Formulario = "frmPrincipal.aspx";
+        /*   private void TransferirSegunPerfil(string usuario)
+           {
+               string Formulario;
+               Formulario = "frmPrincipal.aspx";
 
-            Response.Redirect(Formulario);
-            Response.End();
+               Response.Redirect(Formulario);
+               Response.End();
 
-            //validar usuario
-            //if (dsUsuario.Tables[0].Rows.Count == 0)
-            //{
-            //    // - Usuario no esta registrado en el Sistema - 
-            //    Page.ClientScript.RegisterStartupScript(this.GetType(), "alerta", "MensajeUsuarioNoExiste(1);", true);
-            //}
-            //else
-            //{
-            //    HttpContext context = HttpContext.Current;
+               //validar usuario
+               //if (dsUsuario.Tables[0].Rows.Count == 0)
+               //{
+               //    // - Usuario no esta registrado en el Sistema - 
+               //    Page.ClientScript.RegisterStartupScript(this.GetType(), "alerta", "MensajeUsuarioNoExiste(1);", true);
+               //}
+               //else
+               //{
+               //    HttpContext context = HttpContext.Current;
 
-            //    context.Session["Perfil"] = dsUsuario.Tables[0].Rows[0]["Perfil_Id"];
-            //    context.Session["Nombre"] = dsUsuario.Tables[0].Rows[0]["Nombre"];
-            //    context.Session["Usuario"] = dsUsuario.Tables[0].Rows[0]["Usuario"];
-            //    context.Session["PeriodoActivo"] = dsUsuario.Tables[0].Rows[0]["periodoActivo"];
+               //    context.Session["Perfil"] = dsUsuario.Tables[0].Rows[0]["Perfil_Id"];
+               //    context.Session["Nombre"] = dsUsuario.Tables[0].Rows[0]["Nombre"];
+               //    context.Session["Usuario"] = dsUsuario.Tables[0].Rows[0]["Usuario"];
+               //    context.Session["PeriodoActivo"] = dsUsuario.Tables[0].Rows[0]["periodoActivo"];
 
-            //    string Formulario;
-            //    Formulario = "frmPrincipal.aspx";
+               //    string Formulario;
+               //    Formulario = "frmPrincipal.aspx";
 
-            //    Response.Redirect(Formulario);
-            //    Response.End();
-        }
+               //    Response.Redirect(Formulario);
+               //    Response.End();
+           }*/
     }
 }
