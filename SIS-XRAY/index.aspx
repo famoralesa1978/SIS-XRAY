@@ -111,6 +111,5 @@
 	<script src="../../Recursos/assets/js/core/source/AppForm.js"></script>
 	<script src="../../Recursos/assets/js/core/source/AppNavSearch.js"></script>
 	<script src="../../Recursos/assets/js/core/source/AppVendor.js"></script>
-	<script src="../../Recursos/assets/js/core/demo/Demo.js"></script>
 </body>    
 </html>
