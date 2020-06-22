@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="SIS_XRAY.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RecupararClave.aspx.cs" Inherits="SIS_XRAY.RecupararClave" %>
 
 <!DOCTYPE html>
 
@@ -21,29 +21,26 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<br/>
-						<span class="text-lg text-bold text-primary">Sistema de Informe de xray</span>
+						<span class="text-lg text-bold text-primary">Recuperar contraseña</span>
 						<br/><br/>
 						<form  runat="server" class="form floating-label"  accept-charset="utf-8" method="post">
 							<div class="form-group">
                                 <asp:TextBox ID="txtUsuario"  CssClass="form-control" ValidateRequestMode="Enabled" runat="server" MaxLength="50"  required="required" ValidationGroup="Ingresar"></asp:TextBox>
 								<label for="username">Ingrese su rut</label>
 							</div>
-							<div class="form-group">
-                                <asp:TextBox ID="txtPassword" CssClass="form-control" runat="server" TextMode="Password" MaxLength="50"  required="required" ValidationGroup="Ingresar"></asp:TextBox>
-								<label for="password">Password</label>
-								<p class="help-block"><a href="RecupararClave.aspx">Recordar contraseña?</a></p>
+                            <div class="form-group">
+                                <asp:Image ID="Image2" runat="server" Height="55px" ImageUrl="~/Captcha.aspx" Width="186px" />  
+                                <br />  
+                                <asp:Label runat="server" ID="lblCaptchaMessage"></asp:Label>  
+							</div>
+                            <div class="form-group">
+                                <asp:TextBox runat="server" CssClass="form-control" required="required" ID="txtVerificationCode"></asp:TextBox>  
+                                <label for="username">Código verificador</label>
 							</div>
 							<br/>
-							<div class="row">
-								<div class="col-xs-6 text-left">
-									<div class="checkbox checkbox-inline checkbox-styled">
-										<label>
-											<input type="checkbox"> <span>Remember me</span>
-										</label>
-									</div>
-								</div><!--end .col -->
+							<div class="row">								
 								<div class="col-xs-6 text-right">
-                                    <asp:Button ID="btnIngresar" class="btn btn-primary btn-raised" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" ValidationGroup="Ingresar" />
+                                    <asp:Button ID="btnIngresar" class="btn btn-primary btn-raised" runat="server" Text="Recuperar contraseña" OnClick="btnIngresar_Click" ValidationGroup="Ingresar" />
 								</div><!--end .col -->
 							</div><!--end .row -->
 						</form>
