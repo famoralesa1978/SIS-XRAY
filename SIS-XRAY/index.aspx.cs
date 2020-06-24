@@ -37,8 +37,7 @@ namespace SIS_XRAY
             DataSet ds;
             cmd.CommandText = "pa_loginWeb_sel '" + usr + "','" + encDesc.GenerateHashMD5( psw) + "'";
             cmd.CommandType = CommandType.Text;
-            string name = ConfigurationManager.AppSettings["ConnectionBD"];
-            ds = cn.Listar(name, cmd,ref strMensaje);
+            ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd,ref strMensaje);
 
             if (strMensaje == "OK")
             {

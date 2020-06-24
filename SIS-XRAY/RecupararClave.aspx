@@ -25,7 +25,7 @@
 						<br/><br/>
 						<form  runat="server" class="form floating-label"  accept-charset="utf-8" method="post">
 							<div class="form-group">
-                                <asp:TextBox ID="txtUsuario"  CssClass="form-control" ValidateRequestMode="Enabled" runat="server" MaxLength="50"  required="required" ValidationGroup="Ingresar"></asp:TextBox>
+                                <asp:TextBox ID="txtRut"  CssClass="form-control" ValidateRequestMode="Enabled" runat="server" MaxLength="50"  required="required" ValidationGroup="Ingresar"></asp:TextBox>
 								<label for="username">Ingrese su rut</label>
 							</div>
                             <div class="form-group">

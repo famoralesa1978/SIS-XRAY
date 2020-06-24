@@ -2068,7 +2068,9 @@
     <Compile Include="Captcha.aspx.designer.cs">
       <DependentUpon>Captcha.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Clases\clsEmail.cs" />
     <Compile Include="Clases\classUsuario.cs" />
+    <Compile Include="Clases\clsUtilidades.cs" />
     <Compile Include="RecupararClave.aspx.cs">
       <DependentUpon>RecupararClave.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
