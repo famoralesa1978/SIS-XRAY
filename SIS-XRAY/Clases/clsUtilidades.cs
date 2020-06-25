@@ -27,36 +27,23 @@ namespace Clases
                 SmtpClient envios = new SmtpClient();
                 correos.To.Clear();
                 correos.Body = "";
-                //correos.Body = texto;
                 correos.Subject = Asunto;
                 correos.IsBodyHtml = true;
                 correos.To.Add(Correo);
-                string strMensaje =String.Format("Su usuario para ingresar es {0} y su contraseñes {1}", Run, encDesc.DecryptTripleDES(Clave));
-
-                string htmlBody = "<html><body><div class='adn ads'>" +
-                            "<div class='gs'>" +
-                            "<div class='qQVYZb'></div><div class='utdU2e'></div><div class='tx78Ic'></div><div class='aHl'></div><div tabindex='-1' id=':lt'></div><div class='ii gt adP adO' id=':li'>" +
-                            "<div class='a3s aXjCH m15c9dda4a91c0951' id=':lh'><div dir='ltr'><div class='adM'><br clear='all'></div><div class='adM'><br></div>" + strMensaje + "<br><div class='m_744731337232571497gmail_signature' data-smartmail='gmail_signature'>" +
-                            "<div dir='ltr'><div><div dir='ltr'><div><div dir='ltr'><div><div dir='ltr'><div><div dir='ltr'><div><div dir='ltr'><div><div dir='ltr'><div style='font-family: arial; font-size: small;'><div style='text-align: center;'>" +
-                            "<div style='text-align: left;'><b><font color='#0b5394'><font face='tahoma, sans-serif'><br></font></font></b></div>" +
-                            "<div style='text-align: left;'><b><font color='#0b5394'><font face='tahoma, sans-serif'><br></font></font></b></div>" +
-                            "<div style='text-align: left;'><b>" +
-                            "<font color='#0b5394'><font face='tahoma, sans-serif'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font></font></b><b><font color='#0b5394'>" +
-                            "<font face='tahoma, sans-serif'>" + NombrePersona + "&nbsp;</font></font></b>" +
-                            "</div><div style='text-align: left;'><font face='tahoma, sans-serif'><font color='#0b5394'><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Administraci&oacuten</b>&nbsp;</font></font>" +
-                            "<span style='font-family: tahoma,sans-serif;'>&nbsp;</span></div></div></div><div style='text-align: center; font-family: arial; font-size: small;'><div style='text-align: left;'>" +
-                            "<span style='text-align: center;'>&nbsp;&nbsp;<font face='tahoma, sans-serif'>&nbsp; &nbsp; &nbsp; X-Ray Protecci&oacuten Radiol&oacutegica Ltda.</font></span></div><div style='text-align: left;'>" +
-                            "<font face='tahoma, sans-serif'><span style='text-align: center; font-size: x-small;'>&nbsp; &nbsp;&nbsp;</span><span style='text-align: center;'><font size='2'>&nbsp;San Antonio 50 Of. 403, Santiago, Chile</font></span>" +
-                            "</font></div><div style='text-align: left;'><font face='tahoma, sans-serif' size='2' style='text-align: center;'>&nbsp; &nbsp; &nbsp;(56)-2-26380724 / (56)-2-26323485&nbsp;</font></div></div>" +
-                            "<span style='font-family: arial; font-size: small;'>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span>" +
-                            "<div style='font-family: arial; font-size: small;'>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;" +
-                            "<img width='200' height='143' tabindex='0' class='CToWUd a6T' src='https://ci4.googleusercontent.com/proxy/K72XLe_xqyjLoDUzOzjPd_eCAICzOMPPAI7e0drPiXcHO-Hw-YhFhpJCTCCf4NhaCU4GoVJ70kU=s0-d-e1-ft#http://oi60.tinypic.com/jk7mz4.jpg'/>" +
-                            "<div class='a6S' style='left: 181.6px; top: 363.34px; opacity: 0.01;' dir='ltr'>" +
-                            "<div tabindex='0' class='T-I J-J5-Ji aQv T-I-ax7 L3 a5q' id=':ng' role='button' aria-label='Descargar el archivo adjunto ' data-tooltip='Descargar' data-tooltip-class='a1V'><div class='aSK J-J5-Ji aYr'>" +
-                            "</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div><div class='yj6qo'></div><div class='adL'>" +
-                            "</div></div><div class='adL'>" +
-                            "</div></div></div><div class='ii gt' id=':mb' style='display: none;'><div class='a3s aXjCH undefined' id=':mc'></div></div><div class='hi'></div></div><div class='ajx'></div></div>" +
-                            "</body></html>";         
+                string strMensaje = String.Format("<div>"+
+                        "<div><span style = 'color: #000000;'><span style='font-family:tahoma,sans-serif;'>Estimado(a).&nbsp;</span><strong><span style='font-family: tahoma, sans-serif;'>&nbsp;</span></strong></span></div>" +
+                        " <div> &nbsp;</div> " +
+                        "<div><span style='color:#000000;'><span style='color:#000000;font-family: tahoma, sans-serif;'>Le reenviamos su usuario &nbsp; y su contrase&ntilde;a &nbsp; para ingresar al sistema al Link 'WWW.pagina.cl'.</span></span></div>" +
+                        "<div> &nbsp;</div>" +
+                        "<div><span style = 'color: #000000;' ><span style = 'font-family: tahoma, sans-serif;' > Usuario: {0}</span></span></div>" +
+                        "<div><span style = 'color: #000000;' ><span style = 'font-family: tahoma, sans-serif;' >contrase&ntilde;a: {1}</span></span></div> ", Run, encDesc.DecryptTripleDES(Clave));
+                string htmlBody = "<html><body>"+ strMensaje +
+                    "<div>&nbsp;</div><div><div><div><strong><span style = 'color: #0b5394;'><span style = 'font-family: tahoma, sans-serif;'> &nbsp; &nbsp;</span></span></strong></div>" +
+                    "<div><span style = 'font-family: tahoma, sans-serif;'><span style = 'color: #0b5394;'><strong> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Administraci&oacute;n</strong> &nbsp;</span></span> &nbsp;</div>" +
+                    "</div></div><div><div> &nbsp; &nbsp;<span style = 'font-family: tahoma, sans-serif;'> &nbsp; &nbsp; &nbsp; X - Ray Protecci&oacute;n Radiol&oacute;gica Ltda.</span></div>" +
+                    "<div><span style = 'font-family: tahoma, sans-serif;'> &nbsp; &nbsp; &nbsp;<span style = 'font-size: small;'> &nbsp; San Antonio 50 Of. 403, Santiago, Chile </span></span></div>" +
+                    "<div><span style = 'font-family: tahoma, sans-serif; font-size: small;'> &nbsp; &nbsp; &nbsp; (56) - 2 - 26380724 / (56) - 2 - 26323485 &nbsp;</span></div></div> " +
+                            "</body></html>";
                 correos.Body = htmlBody;                
                 correos.From = new MailAddress(Email.Desde);
                 envios.Credentials = new NetworkCredential(Email.Credencial, encDesc.DecryptTripleDES(Email.Clave));

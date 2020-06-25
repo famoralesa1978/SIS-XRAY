@@ -46,9 +46,6 @@ namespace SIS_XRAY
                     {
                         clsutil.SendMailGmailRecuperarContrasena(ds.Tables[0].Rows[0]["run"].ToString(), ds.Tables[0].Rows[0]["Razon_Social"].ToString(),
                                        "Recuperación de contraseña", ds.Tables[0].Rows[0]["Email"].ToString(), ds.Tables[0].Rows[0]["Clave"].ToString());
-                     //   txt_Email.Text = dt.Tables[0].Rows[0]["Email"].ToString();
-                     //   txt_Razon_Social.Text = dt.Tables[0].Rows[0]["Razon_Social"].ToString();
-                     // txt_Razon_Social.Text = dt.Tables[0].Rows[0]["Clave"].ToString();
                     }
                     else
                     {
@@ -59,7 +56,7 @@ namespace SIS_XRAY
             }
             else
             {
-                lblCaptchaMessage.Text = "Ingrese captcha Correcra!";
+                lblCaptchaMessage.Text = "Ingrese captcha Correcta!";
                 lblCaptchaMessage.ForeColor = System.Drawing.Color.Red;
             }
 
