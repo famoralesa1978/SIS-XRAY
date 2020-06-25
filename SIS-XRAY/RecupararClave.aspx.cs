@@ -59,47 +59,6 @@ namespace SIS_XRAY
                 lblCaptchaMessage.Text = "Ingrese captcha Correcta!";
                 lblCaptchaMessage.ForeColor = System.Drawing.Color.Red;
             }
-
-         /*   string usr;
-            string psw;
-            String strMensaje="";
-            bool valido;
-            valido = true;
-
-            usr = txtUsuario.Text.ToString();
-       
-            SqlCommand cmd = new SqlCommand();
-            DataSet ds;
-          //  cmd.CommandText = "pa_loginWeb_sel '" + usr + "','" + encDesc.GenerateHashMD5( psw) + "'";
-            cmd.CommandType = CommandType.Text;
-            string name = ConfigurationManager.AppSettings["ConnectionBD"];
-            ds = cn.Listar(name, cmd,ref strMensaje);
-
-            if (strMensaje == "OK")
-            {
-                switch (ds.Tables[0].Rows.Count)
-                {
-                    case 0://el usuario  o contraseña no existe
-                        // System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('usuario y contraseña incorrecta');", true);
-                      //  ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
-                        break;
-                    case 1://cuando tiene un solo perfil asociado
-                        //rut,Contraseña as clave,Id_perfil
-                        clsUsu.Usuario = usr;
-                        clsUsu.Id_perfil = Convert.ToInt16( ds.Tables[0].Rows[0]["Id_perfil"].ToString());
-                        // TransferirSegunPerfil(usr);
-                        Response.Redirect("Principal.aspx");
-                        break;
-                    default://cuando tiene mas perfiles asociado.
-                        // code block
-                        break;
-                }
-            }
-            else
-            {
-                System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('" + strMensaje.Replace("'","") + "');", true);
-            }
-           */
         }
 
     }
