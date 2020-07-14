@@ -38,7 +38,6 @@
 								<div class="col-xs-6 text-left">
 									<div class="checkbox checkbox-inline checkbox-styled">
 										<label>
-											<input type="checkbox"> <span>Remember me</span>
 										</label>
 									</div>
 								</div><!--end .col -->
