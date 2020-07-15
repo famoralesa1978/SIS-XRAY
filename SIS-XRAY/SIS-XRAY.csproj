@@ -1596,6 +1596,7 @@
     <Content Include="Recursos\assets\js\libs\jquery\jquery-1.11.2.js" />
     <Content Include="Recursos\assets\js\libs\jquery\jquery-1.11.2.min.js" />
     <Content Include="Recursos\assets\js\libs\jquery\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Recursos\assets\js\libs\Mensaje\UIMessages.js" />
     <Content Include="Recursos\assets\js\libs\microtemplating\microtemplating.js" />
     <Content Include="Recursos\assets\js\libs\microtemplating\microtemplating.min.js" />
     <Content Include="Recursos\assets\js\libs\moment\langs.js" />
@@ -1695,6 +1696,7 @@
     <Content Include="Recursos\assets\less\libs\multi-select\LICENSE.txt" />
     <Content Include="Recursos\assets\less\libs\wizard\MIT-LICENSE.txt" />
     <Content Include="Recursos\css\Login.css" />
+    <Content Include="Recursos\img\Home.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -2141,7 +2143,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Recursos\assets\js\core\cache\" />
-    <Folder Include="Recursos\img\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

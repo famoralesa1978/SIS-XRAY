@@ -14,10 +14,16 @@
 </head>
 <body class="menubar-hoverable header-fixed ">
     <section class="section-account">
-		<div class="img-backdrop" style="background-image: url('../../Recursos/assets/img/img16.jpg')"></div>
+		<div class="img-backdrop" style="background-image: url('../../Recursos/assets/img/img16.jpg')">
+            <div class="row">								
+			    <div class="col-xs-6 text-right">
+                    <asp:HyperLink ID="hypVolver" runat="server" ImageUrl="~/Recursos/img/Home.png" ImageWidth="10px" ImageHeight="10px" NavigateUrl="~/index.aspx">Volver página Princpal</asp:HyperLink>
+                </div><!--end .col -->
+		    </div><!--end .row -->
+		</div>
 		<div class="spacer"></div>
 		<div class="card contain-sm style-transparent">
-			<div class="card-body">
+			<div class="card-body">               
 				<div class="row">
 					<div class="col-sm-6">
 						<br/>

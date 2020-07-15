@@ -11,6 +11,7 @@
 	<link type="text/css" rel="stylesheet" href="../../Recursos/assets/css/theme-default/materialadmin.css?1425466319" />
 	<link type="text/css" rel="stylesheet" href="../../Recursos/assets/css/theme-default/font-awesome.min.css?1422529194" />
 	<link type="text/css" rel="stylesheet" href="../../Recursos/assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
+    <link type="text/css" rel="stylesheet" href="../../Recursos/assets/css/theme-default/libs/toastr/toastr.css?1425466569" />
 </head>
 <body class="menubar-hoverable header-fixed ">
     <section class="section-account">
@@ -43,7 +44,9 @@
 								</div><!--end .col -->
 								<div class="col-xs-6 text-right">
                                     <asp:Button ID="btnIngresar" class="btn btn-primary btn-raised" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" ValidationGroup="Ingresar" />
-								</div><!--end .col -->
+								    <a id="toast-error" class="btn btn-block btn-raised btn-default-bright ink-reaction"><i class="md md-notifications pull-right text-danger"></i>Error message</a>
+                                    <a class="btn btn-block btn-raised btn-default-bright ink-reaction position-toastLogin pull-left" data-position="toast-top-full-width">Top full width</a>
+                                 </div><!--end .col -->
 							</div><!--end .row -->
 						</form>
 					</div><!--end .col -->
@@ -53,6 +56,7 @@
 	</section>
     <script src="../../Recursos/assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
 	<script src="../../Recursos/assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="../../Recursos/assets/js/libs/toastr/toastr.js"></script>
 	<script src="../../Recursos/assets/js/libs/bootstrap/bootstrap.min.js"></script>
 	<script src="../../Recursos/assets/js/libs/spin.js/spin.min.js"></script>
 	<script src="../../Recursos/assets/js/libs/autosize/jquery.autosize.min.js"></script>
@@ -64,5 +68,6 @@
 	<script src="../../Recursos/assets/js/core/source/AppForm.js"></script>
 	<script src="../../Recursos/assets/js/core/source/AppNavSearch.js"></script>
 	<script src="../../Recursos/assets/js/core/source/AppVendor.js"></script>
-</body>    
+    <script src="../../Recursos/assets/js/libs/Mensaje/UIMessages.js"></script>
+</body> 
 </html>
