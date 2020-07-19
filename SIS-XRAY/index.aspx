@@ -40,7 +40,7 @@
         </div>
         <div class="clearfix">
             <i class="material-icons">lock_open</i>
-            <span>Acceso sólo a personal autorizado.</span>
+            <span>Acceso sólo a personal autorizado. ***** CAMBIO AL INDEX ******</span>
         </div>	
         </div>
         <p class="text-center text-muted small">Visitanos en.. <a href="www.detodoautos.cl">www.susitioweb.cl</a></p>
