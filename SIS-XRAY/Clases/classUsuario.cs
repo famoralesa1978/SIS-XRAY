@@ -10,6 +10,7 @@ namespace Clases
     {
         private static string strusuario;
         private static string strNombre;
+        private static string strPerfil;
         private string intId_Usuario;
         private static int intId_perfil;
         private static string strContraseña;
@@ -54,6 +55,7 @@ namespace Clases
 
         public  int Id_perfil { get => intId_perfil; set => intId_perfil = value; }
         public  string Contraseña { get => strContraseña; set => strContraseña = value; }
+        public  string Perfil { get => strPerfil; set => strPerfil = value; }
     }
 
 }

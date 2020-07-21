@@ -9,9 +9,11 @@ namespace SIS_XRAY
 {
     public partial class Site1 : System.Web.UI.MasterPage
     {
+        Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lbl_Perfil.Text = clsUsu.Perfil;
+            lbl_Nombre.Text = clsUsu.Nombre;
         }
     }
 }

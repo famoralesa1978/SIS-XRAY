@@ -37,8 +37,7 @@ namespace SIS_XRAY
             DataSet ds;
             cmd.CommandText = "pa_loginWeb_sel '" + usr + "','" + encDesc.GenerateHashMD5( psw) + "'";
             cmd.CommandType = CommandType.Text;
-            string name = ConfigurationManager.AppSettings["ConnectionBD"];
-            ds = cn.Listar(name, cmd,ref strMensaje);
+            ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd,ref strMensaje);
 
             if (strMensaje == "OK")
             {
@@ -52,6 +51,8 @@ namespace SIS_XRAY
                         //rut,Contraseña as clave,Id_perfil
                         clsUsu.Usuario = usr;
                         clsUsu.Id_perfil = Convert.ToInt16( ds.Tables[0].Rows[0]["Id_perfil"].ToString());
+                        clsUsu.Perfil = ds.Tables[0].Rows[0]["Descripcion"].ToString(); 
+                        clsUsu.Nombre= ds.Tables[0].Rows[0]["Razon_Social"].ToString(); 
                         // TransferirSegunPerfil(usr);
                         Response.Redirect("Principal.aspx");
                         break;
