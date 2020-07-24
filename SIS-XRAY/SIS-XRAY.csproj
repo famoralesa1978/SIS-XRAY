@@ -155,12 +155,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Captcha.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="RecupararClave.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Global.asax" />
     <Content Include="index.aspx" />
@@ -1594,6 +1596,7 @@
     <Content Include="Recursos\assets\js\libs\jquery\jquery-1.11.2.js" />
     <Content Include="Recursos\assets\js\libs\jquery\jquery-1.11.2.min.js" />
     <Content Include="Recursos\assets\js\libs\jquery\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Recursos\assets\js\libs\Mensaje\UIMessages.js" />
     <Content Include="Recursos\assets\js\libs\microtemplating\microtemplating.js" />
     <Content Include="Recursos\assets\js\libs\microtemplating\microtemplating.min.js" />
     <Content Include="Recursos\assets\js\libs\moment\langs.js" />
@@ -1693,7 +1696,7 @@
     <Content Include="Recursos\assets\less\libs\multi-select\LICENSE.txt" />
     <Content Include="Recursos\assets\less\libs\wizard\MIT-LICENSE.txt" />
     <Content Include="Recursos\css\Login.css" />
-    <Content Include="Recursos\js\general.js" />
+    <Content Include="Recursos\img\Home.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1979,6 +1982,7 @@
     <Content Include="Recursos\assets\less\shared\themes\theme-5.less" />
     <Content Include="Recursos\assets\less\shared\themes\theme-default.less" />
     <Content Include="Recursos\assets\less\shared\variables.less" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -2055,13 +2059,28 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Nuevo-JP.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Captcha.aspx.cs">
+      <DependentUpon>Captcha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Captcha.aspx.designer.cs">
+      <DependentUpon>Captcha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\clsEmail.cs" />
     <Compile Include="Clases\classUsuario.cs" />
+    <Compile Include="Clases\clsUtilidades.cs" />
+    <Compile Include="RecupararClave.aspx.cs">
+      <DependentUpon>RecupararClave.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecupararClave.aspx.designer.cs">
+      <DependentUpon>RecupararClave.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Principal.aspx.cs">
       <DependentUpon>Principal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2124,7 +2143,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Recursos\assets\js\core\cache\" />
-    <Folder Include="Recursos\img\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
