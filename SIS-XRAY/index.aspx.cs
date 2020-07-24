@@ -9,63 +9,73 @@ using Utilidades;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Messaging;
 
 namespace SIS_XRAY
 {
-    public partial class index : System.Web.UI.Page
+    public partial class index : Page
     {
-        clsConexion cn = new Conexion.clsConexion();
+        clsConexion cn = new clsConexion();
         ClsDescriptarEncriptar encDesc = new ClsDescriptarEncriptar();
         Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (IsPostBack)
+            {
+                
+            }
         }
 
+        
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            string usr;
-            string psw;
-            String strMensaje="";
-            bool valido;
-            valido = true;
 
-            usr = txtUsuario.Text.ToString();
-            psw = txtPassword.Text.ToString();
+            //string usr;
+            //string psw;
+            //String strMensaje="";
+            //bool valido;
+            //valido = true;
+
+            //usr = txtUsuario.Text.ToString();
+            //psw = txtPassword.Text.ToString();
        
-            SqlCommand cmd = new SqlCommand();
-            DataSet ds;
-            cmd.CommandText = "pa_loginWeb_sel '" + usr + "','" + encDesc.GenerateHashMD5( psw) + "'";
-            cmd.CommandType = CommandType.Text;
-            string name = ConfigurationManager.AppSettings["ConnectionBD"];
-            ds = cn.Listar(name, cmd,ref strMensaje);
+            //SqlCommand cmd = new SqlCommand();
+            //DataSet ds;
+            //cmd.CommandText = "pa_loginWeb_sel '" + usr + "','" + encDesc.GenerateHashMD5( psw) + "'";
+            //cmd.CommandType = CommandType.Text;
+            //string name = ConfigurationManager.AppSettings["ConnectionBD"];
+            //ds = cn.Listar(name, cmd,ref strMensaje);
 
-            if (strMensaje == "OK")
-            {
-                switch (ds.Tables[0].Rows.Count)
-                {
-                    case 0://el usuario  o contraseña no existe
-                        // System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('usuario y contraseña incorrecta');", true);
-                      //  ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
-                        break;
-                    case 1://cuando tiene un solo perfil asociado
-                        //rut,Contraseña as clave,Id_perfil
-                        clsUsu.Usuario = usr;
-                        clsUsu.Id_perfil = Convert.ToInt16( ds.Tables[0].Rows[0]["Id_perfil"].ToString());
-                        // TransferirSegunPerfil(usr);
-                        Response.Redirect("Principal.aspx");
-                        break;
-                    default://cuando tiene mas perfiles asociado.
-                        // code block
-                        break;
-                }
-            }
-            else
-            {
-                System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('" + strMensaje.Replace("'","") + "');", true);
-            }
+            //if (strMensaje == "OK")
+            //{
+            //    switch (ds.Tables[0].Rows.Count)
+            //    {
+            //        case 0://el usuario  o contraseña no existe
+            //               // System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('usuario y contraseña incorrecta');", true);
+            //               //  ScriptManager.RegisterStartupScript(Page, Page.GetType(), "myModal", "$('#myModal').modal();", true);
+            //            Page.ClientScript.RegisterStartupScript(this.GetType(), "alerta", "Mensaje();", true);
+            //            break;
+            //        case 1://cuando tiene un solo perfil asociado
+            //            //rut,Contraseña as clave,Id_perfil
+            //            clsUsu.Usuario = usr;
+            //            clsUsu.Id_perfil = Convert.ToInt16( ds.Tables[0].Rows[0]["Id_perfil"].ToString());
+            //            // TransferirSegunPerfil(usr);
+            //            Response.Redirect("Principal.aspx");
+            //            break;
+            //        default://cuando tiene mas perfiles asociado.
+            //            // code block
+            //            break;
+            //    }
+            //}
+            //else
+            //{
+            //    System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('" + strMensaje.Replace("'","") + "');", true);
+            //}
            
         }
+
+
 
         /*   private void TransferirSegunPerfil(string usuario)
            {

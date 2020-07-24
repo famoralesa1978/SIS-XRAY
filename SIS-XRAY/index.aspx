@@ -12,7 +12,8 @@
 	<link type="text/css" rel="stylesheet" href="../../Recursos/assets/css/theme-default/font-awesome.min.css?1422529194" />
 	<link type="text/css" rel="stylesheet" href="../../Recursos/assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
 </head>
-<body class="menubar-hoverable header-fixed ">
+<body 
+    >
     <%--<div class="login-form">
         <div class="logo align-content-center">
             <img class="align-content-center" src="Recursos/Img/logoxr.jpg"/>
@@ -69,7 +70,8 @@
 							<br/>
 							<span class="text-lg text-bold text-primary">Sistema de Informe de xray</span>
 							<br/><br/>
-							<form  runat="server" class="form floating-label"  accept-charset="utf-8" method="post">
+							<%--<form  runat="server" class="form floating-label"  accept-charset="utf-8" method="post">--%>
+                            <form action="index.aspx" id="form1" runat="server" method="post">
 								<div class="form-group">
                                     <asp:TextBox ID="txtUsuario"  CssClass="form-control" ValidateRequestMode="Enabled" runat="server" MaxLength="50"  required="required" ValidationGroup="Ingresar"></asp:TextBox>
 									<label for="username">Ingrese su rut</label>
@@ -89,15 +91,36 @@
 										</div>
 									</div><!--end .col -->
 									<div class="col-xs-6 text-right">
-                                        <asp:Button ID="btnIngresar" class="btn btn-primary btn-raised" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" ValidationGroup="Ingresar" />
+                                        <asp:Button ID="btnIngresar" class="btn btn-primary btn-raised" runat="server" Text="Ingresar" OnClick="btnIngresar_Click"  />
+                                         <%--<asp:Button ID="Button1" CssClass="btn btn-primary login-btn btn-block" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" />--%>
 									</div><!--end .col -->
 								</div><!--end .row -->
+
+
+        <div id="dialog-message" title="Error de Ingreso" style="display:none">
+          <p>
+            <span class="ui-icon ui-icon-circle-close" style="float:left; margin:0 7px 50px 0;"></span>
+            Usuario o contraseña INE incorrecta, vuelva a intentarlo.
+          </p>
+        </div>
+
+        <div id="dialog-UsrNoExiste" title="Error de Ingreso" style="display:none">
+          <p>
+            <span class="ui-icon ui-icon-circle-close" style="float:left; margin:0 7px 50px 0;"></span>
+            Usuario es valido, pero no se encuenta registrado en el sistema.
+          </p>
+        </div>
+
+
 							</form>
 						</div><!--end .col -->
 					</div><!--end .row -->
 				</div><!--end .card-body -->
 			</div><!--end .card -->
 		</section>
+
+
+
     <script src="../../Recursos/assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
 	<script src="../../Recursos/assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
 	<script src="../../Recursos/assets/js/libs/bootstrap/bootstrap.min.js"></script>
@@ -112,5 +135,6 @@
 	<script src="../../Recursos/assets/js/core/source/AppNavSearch.js"></script>
 	<script src="../../Recursos/assets/js/core/source/AppVendor.js"></script>
 	<script src="../../Recursos/assets/js/core/demo/Demo.js"></script>
+       <script src="../../Recursos/js/general.js"></script>
 </body>    
 </html>
