@@ -16,9 +16,9 @@
     <section class="section-account">
 		<div class="img-backdrop" style="background-image: url('../../Recursos/assets/img/img16.jpg')">
             <div class="row">								
-			    <div class="col-xs-6 text-right">
-                    <asp:HyperLink ID="hypVolver" runat="server" ImageUrl="~/Recursos/img/Home.png" ImageWidth="10px" ImageHeight="10px" NavigateUrl="~/index.aspx">Volver página Princpal</asp:HyperLink>
-                </div><!--end .col -->
+			    <%--<div class="col-xs-6 text-right">
+                    <asp:HyperLink ID="hypVolver" runat="server" ImageUrl="~/Recursos/img/Home.png" CssClass="min-width:0%" ImageWidth="30px" ImageHeight="30px" NavigateUrl="~/index.aspx">Volver página Princpal</asp:HyperLink>
+                </div>--%>
 		    </div><!--end .row -->
 		</div>
 		<div class="spacer"></div>
@@ -47,9 +47,18 @@
 							<div class="row">								
 								<div class="col-xs-6 text-right">
                                     <asp:Button ID="btnIngresar" class="btn btn-primary btn-raised" runat="server" Text="Recuperar contraseña" OnClick="btnIngresar_Click" ValidationGroup="Ingresar" />
+                                    
 								</div><!--end .col -->
+
+								<div class="col-xs-6 text-right">
+									<%--<asp:Button ID="btnHome" class="btn btn-primary btn-raised" runat="server" Text="Volver" OnClick="btnHome_Click" />--%>
+                                    <%--<input id="btnHome" class="btn btn-primary btn-raised" type="button" value="Volver" />--%>
+                                    <input type="button" class="btn btn-primary btn-raised" value="VOLVER" onclick="location.href = 'index.aspx'" />
+								</div>
+
 							</div><!--end .row -->
-						</form>
+						</form>							
+
 					</div><!--end .col -->
 				</div><!--end .row -->
 			</div><!--end .card-body -->

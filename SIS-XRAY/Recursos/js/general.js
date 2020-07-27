@@ -2,13 +2,14 @@
 
 $(function () {
     // $("#dialog-message").hide()
-    MensajeUsuarioNoExiste(activo);
+    //MensajeUsuarioNoExiste(1);
+    //Mensaje();
 
 });
 
 
 function Mensaje() {
-    $("#dialog-message").dialog({
+    $("#mje_error").dialog({
         modal: true,
         buttons: {
             Ok: function () {

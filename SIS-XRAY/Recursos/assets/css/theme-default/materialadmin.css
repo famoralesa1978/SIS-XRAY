@@ -584,7 +584,7 @@ hr.ruler-xxl {
 }
 .img-backdrop img {
   display: block;
-  min-width: 100%;
+  min-width: 100%; /*modificado por JP - tenía 100%*/
   min-height: 100%;
   height: auto;
 }
