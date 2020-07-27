@@ -64,17 +64,7 @@
 								</Triggers>
 
                             </asp:UpdatePanel>
-
-
-
-
 						</form>
-
-
-
-
-
-
 					</div><!--end .col -->
 				</div><!--end .row -->
 			</div><!--end .card-body -->

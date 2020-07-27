@@ -30,5 +30,8 @@ function MensajeUsuarioNoExiste(activo) {
             }
         });
     }
+}
 
+function RefreshDiv(div, destino) {
+    $(div).load(destino);  
 }
