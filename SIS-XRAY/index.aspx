@@ -24,18 +24,11 @@
 						<br/>
 						<span class="text-lg text-bold text-primary">Sistema de Informe de xray</span>
 						<br/><br/>
-
-
-
-
-						<form  runat="server" class="form floating-label"  accept-charset="utf-8" method="post">
+                        <form  runat="server" class="form floating-label"  accept-charset="utf-8" method="post">
 
                             <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
 								<ContentTemplate>
-
-                                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-
 									<div class="form-group">
 										<asp:TextBox ID="txtUsuario"  CssClass="form-control" ValidateRequestMode="Enabled" runat="server" MaxLength="50"  required="required" ValidationGroup="Ingresar"></asp:TextBox>
 										<label for="username">Ingrese su rut</label>
