@@ -61,5 +61,9 @@ namespace SIS_XRAY
             }
         }
 
-    }
+		protected void btnRefrescar_Click(object sender, EventArgs e)
+		{
+			UpdatePanel1.Update();
+		}
+	}
 }

@@ -24,30 +24,46 @@
 						<br/>
 						<span class="text-lg text-bold text-primary">Sistema de Informe de xray</span>
 						<br/><br/>
-						<form  runat="server" class="form floating-label"  accept-charset="utf-8" method="post">
-							<div class="form-group">
-                                <asp:TextBox ID="txtUsuario"  CssClass="form-control" ValidateRequestMode="Enabled" runat="server" MaxLength="50"  required="required" ValidationGroup="Ingresar"></asp:TextBox>
-								<label for="username">Ingrese su rut</label>
-							</div>
-							<div class="form-group">
-                                <asp:TextBox ID="txtPassword" CssClass="form-control" runat="server" TextMode="Password" MaxLength="50"  required="required" ValidationGroup="Ingresar"></asp:TextBox>
-								<label for="password">Password</label>
-								<p class="help-block"><a href="RecupararClave.aspx">Recordar contraseña?</a></p>
-							</div>
-							<br/>
-							<div class="row">
-								<div class="col-xs-6 text-left">
-									<div class="checkbox checkbox-inline checkbox-styled">
-										<label>
-										</label>
+                        <form  runat="server" class="form floating-label"  accept-charset="utf-8" method="post">
+
+                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                            <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+								<ContentTemplate>
+									<div class="form-group">
+										<asp:TextBox ID="txtUsuario"  CssClass="form-control" ValidateRequestMode="Enabled" runat="server" MaxLength="50"  required="required" ValidationGroup="Ingresar"></asp:TextBox>
+										<label for="username">Ingrese su rut</label>
 									</div>
-								</div><!--end .col -->
-								<div class="col-xs-6 text-right">
-                                    <asp:Button ID="btnIngresar" class="btn btn-primary btn-raised" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" ValidationGroup="Ingresar" />
-								    <a id="toast-error" class="btn btn-block btn-raised btn-default-bright ink-reaction"><i class="md md-notifications pull-right text-danger"></i>Error message</a>
-                                    <a class="btn btn-block btn-raised btn-default-bright ink-reaction position-toastLogin pull-left" data-position="toast-top-full-width">Top full width</a>
-                                 </div><!--end .col -->
-							</div><!--end .row -->
+									<div class="form-group">
+										<asp:TextBox ID="txtPassword" CssClass="form-control" runat="server" TextMode="Password" MaxLength="50"  required="required" ValidationGroup="Ingresar"></asp:TextBox>
+										<label for="password">Password</label>
+										<p class="help-block"><a href="RecupararClave.aspx">Recordar contraseña?</a></p>
+									</div>
+									<br/>
+									<div class="row">
+										<div class="col-xs-6 text-left">
+											<div class="checkbox checkbox-inline checkbox-styled">
+												<label>
+												</label>
+											</div>
+										</div><!--end .col -->
+										<div class="col-xs-6 text-right">
+											<asp:Button ID="btnIngresar" class="btn btn-primary btn-raised" runat="server" Text="Ingresar" OnClick="btnIngresar_Click"  />
+										 </div><!--end .col -->
+									</div><!--end .row -->
+
+									<div id="mje_error" title="Error de Ingreso" style="display:none">
+									  <p>
+										<span class="ui-icon ui-icon-circle-close" style="float:left; margin:0 7px 50px 0;"></span>
+										Usuario o contraseña incorrecta, vuelva a intentarlo.
+									  </p>
+									</div>
+								</ContentTemplate>
+
+								<Triggers>
+									<asp:AsyncPostBackTrigger ControlID ="btnIngresar" EventName="Click" />
+								</Triggers>
+
+                            </asp:UpdatePanel>
 						</form>
 					</div><!--end .col -->
 				</div><!--end .row -->
@@ -69,5 +85,10 @@
 	<script src="../../Recursos/assets/js/core/source/AppNavSearch.js"></script>
 	<script src="../../Recursos/assets/js/core/source/AppVendor.js"></script>
     <script src="../../Recursos/assets/js/libs/Mensaje/UIMessages.js"></script>
+
+<script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" />
+
+    <script src="../../Recursos/js/general.js"></script>
 </body> 
 </html>

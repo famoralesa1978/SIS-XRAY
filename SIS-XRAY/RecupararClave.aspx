@@ -16,9 +16,9 @@
     <section class="section-account">
 		<div class="img-backdrop" style="background-image: url('../../Recursos/assets/img/img16.jpg')">
             <div class="row">								
-			    <div class="col-xs-6 text-right">
-                    <asp:HyperLink ID="hypVolver" runat="server" ImageUrl="~/Recursos/img/Home.png" ImageWidth="10px" ImageHeight="10px" NavigateUrl="~/index.aspx">Volver página Princpal</asp:HyperLink>
-                </div><!--end .col -->
+			    <%--<div class="col-xs-6 text-right">
+                    <asp:HyperLink ID="hypVolver" runat="server" ImageUrl="~/Recursos/img/Home.png" CssClass="min-width:0%" ImageWidth="30px" ImageHeight="30px" NavigateUrl="~/index.aspx">Volver página Princpal</asp:HyperLink>
+                </div>--%>
 		    </div><!--end .row -->
 		</div>
 		<div class="spacer"></div>
@@ -30,14 +30,19 @@
 						<span class="text-lg text-bold text-primary">Recuperar contraseña</span>
 						<br/><br/>
 						<form  runat="server" class="form floating-label"  accept-charset="utf-8" method="post">
+                            <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                        <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
+							<ContentTemplate>
 							<div class="form-group">
                                 <asp:TextBox ID="txtRut"  CssClass="form-control" ValidateRequestMode="Enabled" runat="server" MaxLength="50"  required="required" ValidationGroup="Ingresar"></asp:TextBox>
 								<label for="username">Ingrese su rut</label>
 							</div>
-                            <div class="form-group">
-                                <asp:Image ID="Image2" runat="server" Height="55px" ImageUrl="~/Captcha.aspx" Width="186px" />  
+                            <div id="Captcha" class="form-group">
+                                <asp:Image ID="Image2" runat="server" Height="55px" ImageUrl="~/Captcha.aspx" Width="186px" /> 
+                                <asp:Button ID="btnRefrescar" runat="server" CausesValidation="false" ValidationGroup="Captchap" CssClass="md md-refresh" Text="refres" OnClick="btnRefrescar_Click"/>
+                                <a href="__doPostBack('<%=UpdatePanel1.ClientID%>', 'RecuperarClave.aspx');return false;""><i class="md md-refresh"></i></a>
                                 <br />  
-                                <asp:Label runat="server" ID="lblCaptchaMessage"></asp:Label>  
+                                <asp:Label runat="server" ID="lblCaptchaMessage"></asp:Label> 
 							</div>
                             <div class="form-group">
                                 <asp:TextBox runat="server" CssClass="form-control" required="required" ID="txtVerificationCode"></asp:TextBox>  
@@ -47,9 +52,24 @@
 							<div class="row">								
 								<div class="col-xs-6 text-right">
                                     <asp:Button ID="btnIngresar" class="btn btn-primary btn-raised" runat="server" Text="Recuperar contraseña" OnClick="btnIngresar_Click" ValidationGroup="Ingresar" />
+                                    
 								</div><!--end .col -->
+
+								<div class="col-xs-6 text-right">
+                                    <input type="button" class="btn btn-primary btn-raised" value="VOLVER" onclick="location.href = 'index.aspx'" />
+								</div>
+
 							</div><!--end .row -->
-						</form>
+                                </ContentTemplate>
+
+								<Triggers>
+									<asp:AsyncPostBackTrigger ControlID ="btnIngresar" EventName="Click" />
+                                   <asp:AsyncPostBackTrigger ControlID ="btnRefrescar" EventName="Click" /> 
+								</Triggers>
+
+                            </asp:UpdatePanel>
+						</form>							
+
 					</div><!--end .col -->
 				</div><!--end .row -->
 			</div><!--end .card-body -->
@@ -68,5 +88,6 @@
 	<script src="../../Recursos/assets/js/core/source/AppForm.js"></script>
 	<script src="../../Recursos/assets/js/core/source/AppNavSearch.js"></script>
 	<script src="../../Recursos/assets/js/core/source/AppVendor.js"></script>
+    <script src="../../Recursos/js/general.js"></script>
 </body>    
 </html>

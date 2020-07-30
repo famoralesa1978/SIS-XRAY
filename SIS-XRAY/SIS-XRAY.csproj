@@ -1657,6 +1657,7 @@
     <Content Include="Recursos\assets\less\libs\wizard\MIT-LICENSE.txt" />
     <Content Include="Recursos\css\Login.css" />
     <Content Include="Recursos\img\Home.png" />
+    <Content Include="Recursos\js\general.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
