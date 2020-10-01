@@ -397,7 +397,7 @@
 					</div>
 					<div class="expanded">
 						<a href="../../html/dashboards/dashboard.html">
-							<span class="text-lg text-bold text-primary ">MATERIAL&nbsp;ADMIN</span>
+							<span class="text-lg text-bold text-primary ">XRAY</span>
 						</a>
 					</div>
 				</div>
@@ -408,9 +408,9 @@
 
 						<!-- BEGIN DASHBOARD -->
 						<li>
-							<a href="../../html/dashboards/dashboard.html" >
+							<a href="Principal.aspx" >
 								<div class="gui-icon"><i class="md md-home"></i></div>
-								<span class="title">Dashboard</span>
+								<span class="title">Home</span>
 							</a>
 						</li><!--end /menu-li -->
 						<!-- END DASHBOARD -->
@@ -528,7 +528,7 @@
 								</li><!--end /menu-li -->
 								<li class="gui-folder">
 									<a href="javascript:void(0);">
-										<span class="title">Search</span>
+										<span class="title">Personal</span>
 									</a>
 									<!--start submenu -->
 									<ul>
@@ -649,7 +649,7 @@
 				<!-- BEGIN OFFCANVAS SEARCH -->
 				<div id="offcanvas-search" class="offcanvas-pane width-8">
 					<div class="offcanvas-head">
-						<header class="text-primary">Search</header>
+						<header class="text-primary">Personal</header>
 						<div class="offcanvas-tools">
 							<a class="btn btn-icon-toggle btn-default-light pull-right" data-dismiss="offcanvas">
 								<i class="md md-close"></i>
