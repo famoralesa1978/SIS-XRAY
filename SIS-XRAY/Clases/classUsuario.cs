@@ -11,7 +11,8 @@ namespace Clases
         private static string strusuario;
         private static string strNombre;
         private static string strPerfil;
-        private string intId_Usuario;
+    private static string strRut;
+    private string intId_Usuario;
         private static int intId_perfil;
         private static string strContraseña;
         public  string Id_Usuario
@@ -27,7 +28,20 @@ namespace Clases
 
         }
 
-        public    string Usuario
+    public string Rut
+    {
+      get
+      {
+        return strRut;
+      }
+      set
+      {
+        strRut = value;  // value is an implicit parameter
+      }
+
+    }
+
+    public    string Usuario
             {
                 get
                 {

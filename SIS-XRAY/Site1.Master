@@ -663,6 +663,7 @@
 									<div class="tile-text"><strong>A</strong></div>
 								</div>
 							</li>
+                            <asp:Literal ID="ltListaPersonal" runat="server"></asp:Literal>
 							<li class="tile">
 								<a class="tile-content ink-reaction" href="#offcanvas-chat" data-toggle="offcanvas" data-backdrop="false">
 									<div class="tile-icon">
