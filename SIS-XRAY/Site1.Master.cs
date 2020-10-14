@@ -31,11 +31,14 @@ namespace SIS_XRAY
 
 			if (strMensaje == "OK")
 			{
-				ltListaPersonal.Text = "<li class='tile'> " +
-							"	<a class='tile-content ink-reaction' href='#offcanvas-chat' data-toggle='offcanvas' data-backdrop='false'> " +
-							"		<div class='tile-icon'> "+
-							"			<img src = '../../assets/img/avatar4.jpg?1404026791' alt='' />"+
-								"	</div><div class='tile-text'>	Felipe morales		<small>123-123-3210</small></div></a></li>";
+				for (int intFila = 0; intFila < ds.Tables[0].Rows.Count; intFila++)
+				{
+					ltListaPersonal.Text = ltListaPersonal.Text + "<li class='tile'> " + 
+							"	<a class='tile-content ink-reaction' href='#offcanvas-chat' data-toggle='offcanvas' data-backdrop='false'> " + 
+							"		<div class='tile-icon'> " + 
+								"	</div><div class='tile-text'>	" +  ds.Tables[0].Rows[intFila]["Nombre"].ToString() + "	<small>"+ ds.Tables[0].Rows[intFila]["Rut"].ToString() + "</small></div></a></li>";
+				}
+				
 			}
 		}
 	}
