@@ -40,6 +40,15 @@ namespace SIS_XRAY
 				}
 				
 			}
+
+			ltMenu.Text = "<ul id = 'main-menu' class='gui-controls'>" +
+				"	<!--BEGIN DASHBOARD-->" +
+				"	<li> <a href = 'Principal.aspx'>" +
+				"<div class='gui-icon'><i class='md md-home'></i></div>" +
+				"<span class='title'>Home</span>" +
+				"</a></li><!--end /menu-li -->" +
+				"</ul><!--end.main - menu-->" +
+				"	<!--END MAIN MENU -->";
 		}
 	}
 }
