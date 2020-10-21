@@ -176,6 +176,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Contacto\Contacto.aspx" />
     <Content Include="RecupararClave.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Global.asax" />
@@ -2048,6 +2049,13 @@
     <Compile Include="Clases\clsEmail.cs" />
     <Compile Include="Clases\classUsuario.cs" />
     <Compile Include="Clases\clsUtilidades.cs" />
+    <Compile Include="Contacto\Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacto\Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RecupararClave.aspx.cs">
       <DependentUpon>RecupararClave.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
