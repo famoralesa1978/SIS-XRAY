@@ -18,23 +18,7 @@ namespace SIS_XRAY
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            int intID_perfil = clsUsu.Id_perfil;
-            String strMensaje = "";
-
-            SqlCommand cmd = new SqlCommand();
-            DataSet ds;
-            cmd.CommandText = "pa_CargaMenuWeb_sel " + intID_perfil.ToString();
-            cmd.CommandType = CommandType.Text;
-            ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
-
-            if (strMensaje == "OK")
-            {
-               
-            }
-            else
-            {
-                System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('" + strMensaje.Replace("'", "") + "');", true);
-            }
-        }
+     
     }
+  }
 }
