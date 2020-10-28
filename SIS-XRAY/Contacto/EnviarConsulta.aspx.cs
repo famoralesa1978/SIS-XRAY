@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace SIS_XRAY.Contacto
 {
-	public partial class Contacto : System.Web.UI.Page
+	public partial class EnviarConsulta : System.Web.UI.Page
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
