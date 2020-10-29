@@ -54,40 +54,7 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="headerbar-right">
 					<ul class="header-nav header-nav-options">
-						<li>
-							<!-- Search form -->
-							<form class="navbar-search" role="search">
-								<div class="form-group">
-									<input type="text" class="form-control" name="headerSearch" placeholder="Enter your keyword">
-								</div>
-								<button type="submit" class="btn btn-icon-toggle ink-reaction"><i class="fa fa-search"></i></button>
-							</form>
-						</li>
-						<li class="dropdown hidden-xs">
-							<a href="javascript:void(0);" class="btn btn-icon-toggle btn-default" data-toggle="dropdown">
-								<i class="fa fa-bell"></i><sup class="badge style-danger">4</sup>
-							</a>
-							<ul class="dropdown-menu animation-expand">
-								<li class="dropdown-header">Today's messages</li>
-								<li>
-									<a class="alert alert-callout alert-warning" href="javascript:void(0);">
-										<img class="pull-right img-circle dropdown-avatar" src="../../assets/img/avatar2.jpg?1404026449" alt="" />
-										<strong>Alex Anistor</strong><br/>
-										<small>Testing functionality...</small>
-									</a>
-								</li>
-								<li>
-									<a class="alert alert-callout alert-info" href="javascript:void(0);">
-										<img class="pull-right img-circle dropdown-avatar" src="../../assets/img/avatar3.jpg?1404026799" alt="" />
-										<strong>Alicia Adell</strong><br/>
-										<small>Reviewing last changes...</small>
-									</a>
-								</li>
-								<li class="dropdown-header">Options</li>
-								<li><a href="../../html/pages/login.html">View all messages <span class="pull-right"><i class="fa fa-arrow-right"></i></span></a></li>
-								<li><a href="../../html/pages/login.html">Mark as read <span class="pull-right"><i class="fa fa-arrow-right"></i></span></a></li>
-							</ul><!--end .dropdown-menu -->
-						</li><!--end .dropdown -->
+										
 						<li class="dropdown hidden-xs">
 							<a href="javascript:void(0);" class="btn btn-icon-toggle btn-default" data-toggle="dropdown">
 								<i class="fa fa-area-chart"></i>
@@ -127,7 +94,7 @@
 					<ul class="header-nav header-nav-profile">
 						<li class="dropdown">
 							<a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
-								<img src="../../assets/img/avatar1.jpg?1403934956" alt="" />
+								<img src="<%=Page.ResolveUrl("~/")%>Recursos/img/Cliente.png" alt="" />
 								<span class="profile-info">
 									<asp:Label ID="lbl_Nombre" runat="server" Text="Nombre"></asp:Label>
 									<small>
@@ -136,9 +103,8 @@
 							</a>
 							<ul class="dropdown-menu animation-dock">
 								<li class="dropdown-header">Config</li>
-								<li><a href="../../html/pages/profile.html">My profile</a></li>
-								<li><a href="../../html/pages/blog/post.html">My blog <span class="badge style-danger pull-right">16</span></a></li>
-								<li><a href="../../html/pages/calendar.html">My appointments</a></li>
+								<li><a href="../../html/pages/profile.html"> Mi perfil</a></li>
+								<li><a href="../../html/pages/calendar.html">Calendario</a></li>
 								<li class="divider"></li>								
 								<li><a href="<%= Page.ResolveUrl("~/index.aspx") %>"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
 							</ul><!--end .dropdown-menu -->
@@ -164,221 +130,7 @@
 			<div id="content">
 
 				<!-- BEGIN LIST SAMPLES -->
-				<section>
-					<div class="section-header">
-						<ol class="breadcrumb">
-							<li class="active">Layouts</li>
-						</ol>
-					</div>
-					<div class="section-body contain-lg">
-
-						<!-- BEGIN INTRO -->
-						<div class="row">
-							<div class="col-lg-12">
-								<h1 class="text-primary">Layouts</h1>
-							</div><!--end .col -->
-							<div class="col-lg-8">
-								<article class="margin-bottom-xxl">
-									<p class="lead">
-										Material Admin has several layout options that can be used for different purposes.
-										You can either choose between a full-width header or a full-height menubar.
-									</p>
-									<p class="lead">
-										Pin the menubar if you want to start with an expanded menubar.
-										When you choose an expanded menubar, it will automatically collapse on smaller screens.
-									</p>
-								</article>
-							</div><!--end .col -->
-						</div><!--end .row -->
-						<!-- END INTRO -->
-
-						<!-- BEGIN TILE CONTENT -->
-						<div class="row">
-							<div class="col-lg-12">
-								<h2 class="text-primary">Content</h2>
-							</div><!--end .col -->
-						</div><!--end .row -->
-						<!-- END TILE CONTENT -->
-
-						<!-- BEGIN LAYOUT - HEADER FULL WIDTH -->
-						<div class="row">
-							<div class="col-lg-12">
-								<h4>Full-width header</h4>
-							</div>
-						</div><!--end .row -->
-						<div class="row">
-							<div class="col-lg-3 col-md-4  col-sm-12">
-								<article class="margin-bottom-xxl">
-									<p>
-										In this layout, the header extends over the entire width of the screen.
-										Below the header is the menubar.
-									</p>
-								</article>
-							</div><!--end .col -->
-							<div class="col-lg-offset-1 col-md-4 col-sm-6">
-								<div class="card card-outlined style-accent">
-									<div class="card-body no-padding card-tiles style-default-light">
-										<div class="height-1 style-default-bright"></div>
-										<div class="row">
-											<div class="col-xs-3">
-												<div class="height-5 style-gray-bright"></div>
-											</div>
-											<div class="col-xs-9"></div>
-										</div>
-									</div><!--end .card-body -->
-								</div><!--end .card -->
-								<div class="text-caption holder">
-									<a href="javascript:void(0);" class="btn btn-flat btn-accent ink-reaction stick-top-right layoutButton disabled" data-layout="1">Activated</a>
-									<ul class="text-caption">
-										<li>Expanded menubar</li>
-										<li><strong>Full-width header</strong></li>
-										<li>Fixed header</li>
-									</ul>
-								</div><!--end .holder -->
-							</div><!--end .col -->
-							<div class="col-md-4 col-sm-6">
-								<div class="card card-outlined style-default-bright">
-									<div class="card-body no-padding card-tiles style-default-light">
-										<div class="height-1 style-default-bright"></div>
-										<div class="row">
-											<div class="col-xs-1">
-												<div class="height-5 style-gray-bright"></div>
-											</div>
-											<div class="col-xs-11"></div>
-										</div>
-									</div><!--end .card-body -->
-								</div><!--end .card -->
-								<div class="text-caption holder">
-									<a href="javascript:void(0);" class="btn btn-flat btn-accent ink-reaction stick-top-right layoutButton" data-layout="2">Activate</a>
-									<ul class="text-caption">
-										<li>Collapsed menubar</li>
-										<li><strong>Full-width header</strong></li>
-										<li>Fixed header</li>
-									</ul>
-								</div><!--end .holder -->
-							</div><!--end .col -->
-						</div><!--end .row -->
-						<!-- END LAYOUT - HEADER FULL WIDTH -->
-
-						<!-- BEGIN LAYOUT - MENUBAR FULL HEIGHT -->
-						<div class="row">
-							<div class="col-lg-12">
-								<h4>Full-height menubar</h4>
-							</div>
-							<div class="col-lg-3 col-md-4 col-sm-12">
-								<article class="margin-bottom-xxl">
-									<p>
-										In this layout, the menubar extends over the entire height of the screen.
-									</p>
-								</article>
-							</div><!--end .col -->
-							<div class="col-lg-offset-1 col-md-4 col-sm-6">
-								<div class="card card-outlined style-default-bright">
-									<div class="card-body no-padding card-tiles style-default-light">
-										<div class="row">
-											<div class="col-xs-3">
-												<div class="height-6 style-gray-bright"></div>
-											</div>
-											<div class="col-xs-9">
-												<div class="height-1 style-default-bright"></div>
-											</div>
-										</div>
-									</div><!--end .card-body -->
-								</div><!--end .card -->
-								<div class="text-caption holder">
-									<a href="javascript:void(0);" class="btn btn-flat btn-accent ink-reaction stick-top-right layoutButton" data-layout="3">Activate</a>
-									<ul class="text-caption">
-										<li>Expanded menubar</li>
-										<li><strong>Full-height menubar</strong></li>
-										<li>Fixed header</li>
-									</ul>
-								</div><!--end .holder -->
-							</div><!--end .col -->
-							<div class="col-md-4 col-sm-6">
-								<div class="card card-outlined style-default-bright">
-									<div class="card-body no-padding card-tiles style-default-light">
-										<div class="row">
-											<div class="col-xs-1">
-												<div class="height-6 style-gray-bright"></div>
-											</div>
-											<div class="col-xs-11">
-												<div class="height-1 style-default-bright"></div>
-											</div>
-										</div>
-									</div><!--end .card-body -->
-								</div><!--end .card -->
-								<div class="text-caption holder">
-									<a href="javascript:void(0);" class="btn btn-flat btn-accent ink-reaction stick-top-right layoutButton" data-layout="4">Activate</a>
-									<ul class="text-caption">
-										<li>Collapsed menubar</li>
-										<li><strong>Full-height menubar</strong></li>
-										<li>Fixed header</li>
-									</ul>
-								</div><!--end .holder -->
-							</div><!--end .col -->
-						</div><!--end .row -->
-						<!-- END LAYOUT - MENUBAR FULL HEIGHT -->
-
-						<!-- BEGIN LAYOUT - STATIC HEADER -->
-						<div class="row">
-							<div class="col-lg-12">
-								<h4>Static header</h4>
-							</div>
-							<div class="col-lg-3 col-md-4 col-sm-12">
-								<article class="margin-bottom-xxl">
-									<p>
-										If you do not want to have a fixed header, you simpe remove the <code>.header-fixed</code> class.
-									</p>
-								</article>
-							</div><!--end .col -->
-							<div class="col-lg-offset-1 col-md-4 col-sm-6">
-								<div class="card card-outlined style-default-bright">
-									<div class="card-body no-padding card-tiles style-gray-bright">
-										<div class="row">
-											<div class="col-xs-3"></div>
-											<div class="col-xs-9 ">
-												<div class="border-black border-dashed"><div class="style-default-bright height-1"></div></div>
-												<div class="height-5 style-default-light"></div>
-											</div>
-										</div>
-									</div><!--end .card-body -->
-								</div><!--end .card -->
-								<div class="text-caption holder">
-									<a href="javascript:void(0);" class="btn btn-flat btn-accent ink-reaction stick-top-right layoutButton" data-layout="5">Activate</a>
-									<ul class="text-caption">
-										<li>Expanded menubar</li>
-										<li>Full-height menubar</li>
-										<li><strong>Static header</strong></li>
-									</ul>
-								</div><!--end .holder -->
-							</div><!--end .col -->
-							<div class="col-md-4 col-sm-6">
-								<div class="card card-outlined style-default-bright">
-									<div class="card-body no-padding card-tiles style-gray-bright">
-										<div class="row">
-											<div class="col-xs-1"></div>
-											<div class="col-xs-11 ">
-												<div class="border-black border-dashed"><div class="style-default-bright height-1"></div></div>
-												<div class="height-5 style-default-light"></div>
-											</div>
-										</div>
-									</div><!--end .card-body -->
-								</div><!--end .card -->
-								<div class="text-caption holder">
-									<a href="javascript:void(0);" class="btn btn-flat btn-accent ink-reaction stick-top-right layoutButton" data-layout="6">Activate</a>
-									<ul class="text-caption">
-										<li>Collapsed menubar</li>
-										<li>Full-height menubar</li>
-										<li><strong>Static header</strong></li>
-									</ul>
-								</div><!--end .holder -->
-							</div><!--end .col -->
-						</div><!--end .row -->
-						<!-- END LAYOUT - STATIC HEADER -->
-
-					</div><!--end .section-body -->
-				</section>                
-                    <div>
+					 <div>
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
@@ -520,12 +272,15 @@
      </form>
 		<!-- END BASE -->
     <!-- BEGIN JAVASCRIPT -->
+
 		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
 		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
 		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/bootstrap/bootstrap.min.js"></script>
 		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/spin.js/spin.min.js"></script>
 		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/autosize/jquery.autosize.min.js"></script>
 		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
+		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/ckeditor/ckeditor.js"></script>
+			<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/ckeditor/adapters/jquery.js"></script>
 		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/App.js"></script>
 		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/AppNavigation.js"></script>
 		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/AppOffcanvas.js"></script>
