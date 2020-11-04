@@ -85,8 +85,9 @@ namespace SIS_XRAY
 					for (int intFila = 0; intFila <= ds.Tables[0].Rows.Count - 1; intFila++)
 					{
 						ltMenu.Text += "<li " + ds.Tables[0].Rows[intFila]["Li"].ToString() + ">";
-						ltMenu.Text += ds.Tables[0].Rows[intFila]["Xml"].ToString();
-
+						string strPagina= Page.ResolveUrl("~/" + ds.Tables[0].Rows[intFila]["Pagina"].ToString());
+						ltMenu.Text += ds.Tables[0].Rows[intFila]["Xml"].ToString().Replace("Pagina", strPagina);
+						
 						Cargar_Submenu(ds.Tables[1], Convert.ToInt16(ds.Tables[0].Rows[intFila]["Id_menuWeb"].ToString()));
 
 						ltMenu.Text += "</li>";
@@ -102,32 +103,6 @@ namespace SIS_XRAY
 			{
 				System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('" + strMensaje.Replace("'", "") + "');", true);
 			}
-
-			//if (ds == null)
-			//	menuStrip.Visible = false;
-			//else
-			//{
-			//	//menuStrip.Items.Clear();
-			//	menuStrip.Visible = ds.Tables[0].Rows.Count == 0 ? false : true;
-			//	if (ds.Tables[0].Rows.Count > 0)
-			//	{
-
-			//		for (int intFila = 0; intFila <= ds.Tables[0].Rows.Count - 1; intFila++)
-			//		{
-			//			tsiMenu = new ToolStripMenuItem();
-			//			tsiMenu.Text = ds.Tables[0].Rows[intFila]["Menu"].ToString();
-			//			tsiMenu.Name = ds.Tables[0].Rows[intFila]["nameMenu"].ToString();
-			//			tsiMenu.Tag = ds.Tables[0].Rows[intFila]["Id_Menu"].ToString();
-
-
-			//			if ((bool)ds.Tables[0].Rows[intFila]["EventoClick"] == true)
-			//				tsiMenu.Click += new EventHandler(this.Cargamenu_Click);
-			//		//	else
-			//		//		Cargar_Submenu(ref tsiMenu, ds.Tables[1], Convert.ToInt16(ds.Tables[0].Rows[intFila]["Id_Menu"].ToString()));
-			//		//	menuStrip.Items.Add(tsiMenu);
-			//		}
-			//	}
-			//}
 		}
 
 		private void Cargar_Submenu(DataTable dt, int intTag)
@@ -142,34 +117,13 @@ namespace SIS_XRAY
 				foreach (DataRowView drv in dv)
 				{
 					ltMenu.Text += "<li " + drv["Li"].ToString() + ">";
-					ltMenu.Text += drv["Xml"].ToString();
+					string strPagina = Page.ResolveUrl("~/" + drv["Pagina"].ToString());
+					ltMenu.Text += drv["Xml"].ToString().Replace("Pagina", strPagina);
 
 					//		Cargar_Submenu(ds.Tables[1], Convert.ToInt16(ds.Tables[0].Rows[intFila]["Id_menuWeb"].ToString()));
 
 					ltMenu.Text += "</li>";
 
-
-
-					//	if (drv["Menu"].ToString() == "Separador")
-					//	{
-					//		tsiSeparador = new ToolStripSeparator();
-					//		tsiMenu.DropDownItems.Add(tsiSeparador);
-					//	}
-					//	else
-					//	{
-					//		tsiSubMenu = new ToolStripMenuItem();
-					//		tsiSubMenu.Text = drv["Menu"].ToString();
-					//		tsiSubMenu.Name = drv["nameMenu"].ToString();
-					//		tsiSubMenu.Tag = drv["Id_Menu"].ToString();
-
-
-					//		if ((bool)drv["EventoClick"] == true)
-					//			tsiSubMenu.Click += new EventHandler(this.Cargamenu_Click);
-					//		Cargar_Submenu(ref tsiSubMenu, dt, Convert.ToInt16(tsiSubMenu.Tag));
-					//		tsiMenu.DropDownItems.Add(tsiSubMenu);
-
-
-					//	}
 
 				}
 				ltMenu.Text += "</ul>";

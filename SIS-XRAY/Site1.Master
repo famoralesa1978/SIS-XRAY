@@ -20,6 +20,7 @@
 		<link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/materialadmin.css?1425466319" />
 		<link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/font-awesome.min.css?1422529194" />
 		<link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
+		<link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/libs/summernote/summernote.css?1425218701" />
 		<!-- END STYLESHEETS -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
