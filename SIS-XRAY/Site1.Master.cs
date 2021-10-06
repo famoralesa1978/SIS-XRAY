@@ -64,45 +64,92 @@ namespace SIS_XRAY
 
 		private void HabiliarDesabilitarMenu(int intPerfil)
 		{
-			SqlCommand cmd = new SqlCommand();
-			DataSet ds;
-			cmd.CommandText = "pa_WEBMenuPrivilegio_sel " + intPerfil.ToString();
-			cmd.CommandType = CommandType.Text;
-			ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
+			//SqlCommand cmd = new SqlCommand();
+			//DataSet ds;
+			//cmd.CommandText = "pa_WEBMenuPrivilegio_sel " + intPerfil.ToString();
+			//cmd.CommandType = CommandType.Text;
+			//ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
 
 
-			if (strMensaje == "OK")
-			{
-				ltMenu.Text = "<ul id = 'main-menu' class='gui-controls'>" +
-			"	<!--BEGIN DASHBOARD-->";
-			//"	<li> <a href = 'Principal.aspx'>" +
-			//"<div class='gui-icon'><i class='md md-home'></i></div>" +
-			//"<span class='title'>Home</span>" +
-			//"</a></li><!--end /menu-li -->"; 
+			//if (strMensaje == "OK")
+			//{
+				ltMenu.Text = String.Format("<div id='menubar' class='menubar-inverse '>" +
+				"<div class='menubar-fixed-panel'>" +
+					"<div>" +
+						"<a class='btn btn-icon-toggle btn-default menubar-toggle' data-toggle='menubar' href='javascript:void(0);'>" +
+							"<i class='fa fa-bars'></i>" +
+						"</a>" +
+					"</div>" +
+					"<div class='expanded'>" +
+						"<a href = '{0}Principal.aspx' > " +
+							"<span class='text-lg text-bold text-primary '>Xray</span>" +
+						"</a>" +
+					"</div>" +
+				"</div>" +
+				"<div class='menubar-scroll-panel'>" +
+				"<!--BEGIN MAIN MENU -->" +
+					"<ul id = 'main-menu' class='gui-controls'>" +
+					"<!--BEGIN DASHBOARD-->" +
+						"<li>" +
+							"<a href = '{0}Principal.aspx' >" +
+								 "<div class='gui-icon'><i class='md md-home'></i></div>" +
+								"<span class='title'>Menu</span>" +
+							"</a>" +
+						"</li><!--end /menu-li -->" +
+						"<!-- END DASHBOARD -->" +
+						"<!--BEGIN EMAIL-->" +
+						"<li class='gui-folder'>" +
+							"<a>" +
+								"<div class='gui-icon'><i class='md md-email'></i></div>" +
+								"<span class='title'>Email</span>" +
+							"</a>" +
+							"<!--start submenu -->" +
+							"<ul>" +
+								"<li><a href = '../../html/mail/inbox.html' class='active'><span class='title'>Inbox</span></a></li>" +
+								"<li><a href = '../../html/mail/compose.html' ><span class='title'>Compose</span></a></li>" +
+								"<li><a href = '../../html/mail/reply.html' ><span class='title'>Reply</span></a></li> " +
+								"<li><a href = '../../html/mail/message.html' ><span class='title'>View message</span></a></li>" +
+							"</ul><!--end /submenu -->" +
+						"</li><!--end /menu-li --> " +
+						"<!-- END EMAIL -->" +
+					"</ul ><!--end.main - menu-->" +
+					"<!--END MAIN MENU -->" +
+				"</div ><!--end.menubar - scroll - panel-->" +
+			"</div ><!--end #menubar-->" +
+			"<!--END MENUBAR-->", Page.ResolveUrl("~/"));
 
-				if (ds.Tables[0].Rows.Count > 0)
-				{
-					for (int intFila = 0; intFila <= ds.Tables[0].Rows.Count - 1; intFila++)
-					{
-						ltMenu.Text += "<li " + ds.Tables[0].Rows[intFila]["Li"].ToString() + ">";
-						string strPagina= Page.ResolveUrl("~/" + ds.Tables[0].Rows[intFila]["Pagina"].ToString());
-						ltMenu.Text += ds.Tables[0].Rows[intFila]["Xml"].ToString().Replace("Pagina", strPagina);
-						
-						Cargar_Submenu(ds.Tables[1], Convert.ToInt16(ds.Tables[0].Rows[intFila]["Id_menuWeb"].ToString()));
-
-						ltMenu.Text += "</li>";
-					}
-
-				}
 
 
-				ltMenu.Text += "</ul><!--end.main - menu-->" +
-			"	<!--END MAIN MENU -->";
-			}
-			else
-			{
-				System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('" + strMensaje.Replace("'", "") + "');", true);
-			}
+			//	ltMenu.Text = "<ul id = 'main-menu' class='gui-controls'>" +
+			//"	<!--BEGIN DASHBOARD-->";
+			////"	<li> <a href = 'Principal.aspx'>" +
+			////"<div class='gui-icon'><i class='md md-home'></i></div>" +
+			////"<span class='title'>Home</span>" +
+			////"</a></li><!--end /menu-li -->"; 
+
+		//	if (ds.Tables[0].Rows.Count > 0)
+		//	{
+		//		for (int intFila = 0; intFila <= ds.Tables[0].Rows.Count - 1; intFila++)
+		//		{
+		//			ltMenu.Text += "<li " + ds.Tables[0].Rows[intFila]["Li"].ToString() + ">";
+		//			string strPagina= Page.ResolveUrl("~/" + ds.Tables[0].Rows[intFila]["Pagina"].ToString());
+		//			ltMenu.Text += ds.Tables[0].Rows[intFila]["Xml"].ToString().Replace("Pagina", strPagina);
+
+		//			Cargar_Submenu(ds.Tables[1], Convert.ToInt16(ds.Tables[0].Rows[intFila]["Id_menuWeb"].ToString()));
+
+		//			ltMenu.Text += "</li>";
+		//		}
+
+		//	}
+
+
+		//	ltMenu.Text += "</ul><!--end.main - menu-->" +
+		//"	<!--END MAIN MENU -->";
+	//}
+	//		else
+	//		{
+	//			System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('" + strMensaje.Replace("'", "") + "');", true);
+	//		}
 		}
 
 		private void Cargar_Submenu(DataTable dt, int intTag)

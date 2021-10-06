@@ -40,9 +40,7 @@
 					<ul class="header-nav header-nav-options">
 						<li class="header-nav-brand" >
 							<div class="brand-holder">
-								<a href="../../html/dashboards/dashboard.html">
-									<span class="text-lg text-bold text-primary">Xray reporte</span>
-								</a>
+								<asp:HyperLink ID="HyperLink1" CssClass="text-lg text-bold text-primary" NavigateUrl="~/Principal.aspx" runat="server">Xray reporte</asp:HyperLink>
 							</div>
 						</li>
 						<li>
