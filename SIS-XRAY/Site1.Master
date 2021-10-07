@@ -40,7 +40,7 @@
 					<ul class="header-nav header-nav-options">
 						<li class="header-nav-brand" >
 							<div class="brand-holder">
-								<asp:HyperLink ID="HyperLink1" CssClass="text-lg text-bold text-primary" NavigateUrl="~/Principal.aspx" runat="server">Xray reporte</asp:HyperLink>
+								<asp:HyperLink ID="HyperLink1" CssClass="text-lg text-bold text-primary" NavigateUrl="~/Principal.aspx" runat="server">Xray informes</asp:HyperLink>
 							</div>
 						</li>
 						<li>
@@ -59,32 +59,32 @@
 								<i class="fa fa-area-chart"></i>
 							</a>
 							<ul class="dropdown-menu animation-expand">
-								<li class="dropdown-header">Server load</li>
+								<li class="dropdown-header"><FONT SIZE=4>Personal controlado<br>por trimestre</FONT></li>
 								<li class="dropdown-progress">
 									<a href="javascript:void(0);">
 										<div class="dropdown-label">
-											<span class="text-light">Server load <strong>Today</strong></span>
+											<span class="text-light">1 semestre</span>
 											<strong class="pull-right">93%</strong>
 										</div>
-										<div class="progress"><div class="progress-bar progress-bar-danger" style="width: 93%"></div></div>
+										<div class="progress"><div class="progress-bar progress-bar-danger" style="width: 100%"></div></div>
 									</a>
 								</li><!--end .dropdown-progress -->
 								<li class="dropdown-progress">
 									<a href="javascript:void(0);">
 										<div class="dropdown-label">
-											<span class="text-light">Server load <strong>Yesterday</strong></span>
+											<span class="text-light">2 semestre</span>
 											<strong class="pull-right">30%</strong>
 										</div>
-										<div class="progress"><div class="progress-bar progress-bar-success" style="width: 30%"></div></div>
+										<div class="progress"><div class="progress-bar progress-bar-success" style="width: 100%"></div></div>
 									</a>
 								</li><!--end .dropdown-progress -->
 								<li class="dropdown-progress">
 									<a href="javascript:void(0);">
 										<div class="dropdown-label">
-											<span class="text-light">Server load <strong>Lastweek</strong></span>
+											<span class="text-light">3 semestre</span>
 											<strong class="pull-right">74%</strong>
 										</div>
-										<div class="progress"><div class="progress-bar progress-bar-warning" style="width: 74%"></div></div>
+										<div class="progress"><div class="progress-bar progress-bar-warning" style="width: 100%"></div></div>
 									</a>
 								</li><!--end .dropdown-progress -->
 							</ul><!--end .dropdown-menu -->
