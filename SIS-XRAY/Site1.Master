@@ -52,12 +52,13 @@
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="headerbar-right">
-					<ul class="header-nav header-nav-options">
-										
+					<asp:Substitution ID="SubPersonalControlado" runat="server" MethodName="GetPersonalControlado" />
+					<%--<ul class="header-nav header-nav-options">				
 						<li class="dropdown hidden-xs">
 							<a href="javascript:void(0);" class="btn btn-icon-toggle btn-default" data-toggle="dropdown">
 								<i class="fa fa-area-chart"></i>
 							</a>
+							
 							<ul class="dropdown-menu animation-expand">
 								<li class="dropdown-header"><FONT SIZE=4>Personal controlado<br>por trimestre</FONT></li>
 								<li class="dropdown-progress">
@@ -89,7 +90,7 @@
 								</li><!--end .dropdown-progress -->
 							</ul><!--end .dropdown-menu -->
 						</li><!--end .dropdown -->
-					</ul><!--end .header-nav-options -->
+					</ul><!--end .header-nav-options -->--%>
 					<ul class="header-nav header-nav-profile">
 						<li class="dropdown">
 							<a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">

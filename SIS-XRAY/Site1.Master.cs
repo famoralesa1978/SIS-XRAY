@@ -58,10 +58,49 @@ namespace SIS_XRAY
 			//{
 			//System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('" + strMensaje.Replace("'", "") + "');", true);
 			//}
-
 			HabiliarDesabilitarMenu(intID_perfil);
 		}
+		public static String GetPersonalControlado(HttpContext context)
+		{
 
+			return "<ul class='header-nav header-nav-options'>" +
+						"<li class='dropdown hidden-xs'>" +
+							"<a href='javascript:void(0);' class='btn btn-icon-toggle btn-default' data-toggle='dropdown'>" +
+								"<i class='fa fa-area-chart'></i>" +
+							"</a>" +
+							"<ul class='dropdown-menu animation-expand'>" +
+								"<li class='dropdown-header'><FONT SIZE=4>Personal controlado<br>por trimestre</FONT></li>" +
+								"<li class='dropdown-progress'>" +
+									"<a href='javascript:void(0);'>" +
+										"<div class='dropdown-label'>" +
+											"<span class='text-light'>1 semestre</span>" +
+											"<strong class='pull-right'>93%</strong>" +
+										"</div>" +
+										"<div class='progress'><div class='progress-bar progress-bar-danger' style='width: 100%'></div></div>" +
+									"</a> " +
+								"</li><!--end .dropdown-progress -->" +
+								"<li class='dropdown-progress'>" +
+									"<a href='javascript:void(0);'>" +
+										"<div class='dropdown-label'>" +
+											"<span class='text-light'>2 semestre</span>" +
+											"<strong class='pull-right'>30%</strong>" +
+										"</div>" +
+										"<div class='progress'><div class='progress-bar progress-bar-success' style='width: 100%'></div></div>" +
+									"</a> " +
+								"</li><!--end .dropdown-progress -->" +
+								"<li class='dropdown-progress'>" +
+									"<a href='javascript:void(0);'>" +
+										"<div class='dropdown-label'>" +
+											"<span class='text-light'>3 semestre</span>" +
+											"<strong class='pull-right'>74%</strong>" +
+										"</div>" +
+										"<div class='progress'><div class='progress-bar progress-bar-warning' style='width: 100%'></div></div>" +
+									"</a>" +
+								"</li><!--end .dropdown-progress -->" +
+							"</ul><!--end .dropdown-menu -->" +
+						"</li><!--end .dropdown -->" +
+					"</ul><!--end .header-nav-options -->";
+		}
 		private void HabiliarDesabilitarMenu(int intPerfil)
 		{
 			//SqlCommand cmd = new SqlCommand();
