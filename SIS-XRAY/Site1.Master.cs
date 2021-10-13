@@ -20,45 +20,43 @@ namespace SIS_XRAY
 		{
 			lbl_Perfil.Text = clsUsu.Perfil;
 			lbl_Nombre.Text = clsUsu.Nombre;
+			int intID_perfil = clsUsu.Id_perfil;
+			if (String.IsNullOrEmpty(clsUsu.Id_Usuario))
+				Response.Redirect("~/index.aspx");
 
-			ltListaPersonal.Text = "";
-
+			HabiliarDesabilitarMenu(intID_perfil);
+		}
+		public static String GetListadoPersonal(HttpContext context)
+		{
+			clsConexion cn = new Conexion.clsConexion();
+			Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
+			String strMensaje = "";
+			Literal ltListaPersonal= new Literal();
 			SqlCommand cmd = new SqlCommand();
 			DataSet ds;
-			cmd.CommandText = "pa_ListarPersonal '" + clsUsu.Rut + "'";
+			cmd.CommandText = "pa_ListarPersonalWEB '" + clsUsu.Rut + "'";
 			cmd.CommandType = CommandType.Text;
 			ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
 
 			if (strMensaje == "OK")
 			{
-				for (int intFila = 0; intFila < ds.Tables[0].Rows.Count; intFila++)
+				if (ds.Tables[0].Rows.Count > 0)
 				{
-					ltListaPersonal.Text = ltListaPersonal.Text + "<li class='tile'> " + 
-							"	<a class='tile-content ink-reaction' href='#offcanvas-chat' data-toggle='offcanvas' data-backdrop='false'> " + 
-							"		<div class='tile-icon'> " + 
-								"	</div><div class='tile-text'>	" +  ds.Tables[0].Rows[intFila]["Nombre"].ToString() + "	<small>"+ ds.Tables[0].Rows[intFila]["Rut"].ToString() + "</small></div></a></li>";
+					ltListaPersonal.Text = "<div id='offcanvas-search' class='offcanvas-pane width-8'><div class='offcanvas-head'><header class='text-primary'>Personal (" + ds.Tables[0].Rows.Count.ToString() + ")</header>";
+					ltListaPersonal.Text += "<div class='offcanvas-tools'><a class='btn btn-icon-toggle btn-default-light pull-right' data-dismiss='offcanvas'>";
+					ltListaPersonal.Text += "<i class='md md-close'></i></a></div></div><div class='offcanvas-body no-padding'><ul class='list '>";
+					for (int intFila = 0; intFila < ds.Tables[0].Rows.Count; intFila++)
+					{
+						if (!ds.Tables[0].Rows[intFila]["Nombre"].ToString().ToUpper().Contains("REFERENCIA"))
+							ltListaPersonal.Text = ltListaPersonal.Text + "<li class='tile'> " +
+									"<a class='tile-content ink-reaction' href='#offcanvas-chat' data-toggle='offcanvas' data-backdrop='false'> " +
+									"<div class='tile-icon'> " +
+										"</div><div class='tile-text'>	" + ds.Tables[0].Rows[intFila]["Nombre"].ToString() + "	<small>" + ds.Tables[0].Rows[intFila]["Rut"].ToString() + "</small></div></a></li>";
+					}
+					ltListaPersonal.Text += "</ul></div><!--end .offcanvas-body -->	</div><!--end .offcanvas-pane -->";
 				}
-				
 			}
-
-			int intID_perfil = clsUsu.Id_perfil;
-			//String strMensaje = "";
-
-			//SqlCommand cmd = new SqlCommand();
-			//DataSet ds;
-			//cmd.CommandText = "pa_WEBMenuPrivilegio_sel " + intID_perfil.ToString();
-			//cmd.CommandType = CommandType.Text;
-			//ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
-
-			//if (strMensaje == "OK")
-			//{
-
-			//}
-			//else
-			//{
-			//System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('" + strMensaje.Replace("'", "") + "');", true);
-			//}
-			HabiliarDesabilitarMenu(intID_perfil);
+			return ltListaPersonal.Text;
 		}
 		public static String GetPersonalControlado(HttpContext context)
 		{
@@ -190,7 +188,6 @@ namespace SIS_XRAY
 	//			System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('" + strMensaje.Replace("'", "") + "');", true);
 	//		}
 		}
-
 		private void Cargar_Submenu(DataTable dt, int intTag)
 		{
 			DataView dv = new DataView(dt);
