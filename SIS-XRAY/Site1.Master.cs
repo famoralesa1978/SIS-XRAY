@@ -60,44 +60,75 @@ namespace SIS_XRAY
 		}
 		public static String GetPersonalControlado(HttpContext context)
 		{
+			clsConexion cn = new Conexion.clsConexion();
+			Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
+			String strMensaje = "";
+			Literal ltListaPersonal = new Literal();
+			SqlCommand cmd = new SqlCommand();
+			DataSet ds;
+			cmd.CommandText = "pa_PersonalControloadoPorTriWEB '" + clsUsu.Rut + "'," + clsUsu.Id_Usuario.ToString();
+			cmd.CommandType = CommandType.Text;
+			ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
 
-			return "<ul class='header-nav header-nav-options'>" +
-						"<li class='dropdown hidden-xs'>" +
-							"<a href='javascript:void(0);' class='btn btn-icon-toggle btn-default' data-toggle='dropdown'>" +
-								"<i class='fa fa-area-chart'></i>" +
-							"</a>" +
-							"<ul class='dropdown-menu animation-expand'>" +
-								"<li class='dropdown-header'><FONT SIZE=4>Personal controlado<br>por trimestre</FONT></li>" +
-								"<li class='dropdown-progress'>" +
-									"<a href='javascript:void(0);'>" +
-										"<div class='dropdown-label'>" +
-											"<span class='text-light'>1 semestre</span>" +
-											"<strong class='pull-right'>93%</strong>" +
-										"</div>" +
-										"<div class='progress'><div class='progress-bar progress-bar-danger' style='width: 100%'></div></div>" +
-									"</a> " +
-								"</li><!--end .dropdown-progress -->" +
-								"<li class='dropdown-progress'>" +
-									"<a href='javascript:void(0);'>" +
-										"<div class='dropdown-label'>" +
-											"<span class='text-light'>2 semestre</span>" +
-											"<strong class='pull-right'>30%</strong>" +
-										"</div>" +
-										"<div class='progress'><div class='progress-bar progress-bar-success' style='width: 100%'></div></div>" +
-									"</a> " +
-								"</li><!--end .dropdown-progress -->" +
-								"<li class='dropdown-progress'>" +
-									"<a href='javascript:void(0);'>" +
-										"<div class='dropdown-label'>" +
-											"<span class='text-light'>3 semestre</span>" +
-											"<strong class='pull-right'>74%</strong>" +
-										"</div>" +
-										"<div class='progress'><div class='progress-bar progress-bar-warning' style='width: 100%'></div></div>" +
-									"</a>" +
-								"</li><!--end .dropdown-progress -->" +
-							"</ul><!--end .dropdown-menu -->" +
-						"</li><!--end .dropdown -->" +
-					"</ul><!--end .header-nav-options -->";
+			if (strMensaje == "OK")
+			{
+				if (ds.Tables[0].Rows.Count > 0)
+				{
+
+					ltListaPersonal.Text = "<ul class='header-nav header-nav-options'><li class='dropdown hidden-xs'><a href='javascript:void(0);' class='btn btn-icon-toggle btn-default' data-toggle='dropdown'>";
+					ltListaPersonal.Text += "<i class='fa fa-area-chart'></i></a><ul class='dropdown-menu animation-expand'><li class='dropdown-header'><FONT SIZE=4>Personal controlado<br>por trimestre</FONT></li>";
+					//ltListaPersonal.Text += "<i class='md md-close'></i></a></div></div><div class='offcanvas-body no-padding'><ul class='list '>";
+					for (int intFila = 0; intFila < ds.Tables[0].Rows.Count; intFila++)
+					{
+						int intCantidad = (int)ds.Tables[0].Rows[intFila]["Pelicula"];
+						int intRefenrecia = (int)ds.Tables[0].Rows[intFila]["Referencia"];
+						decimal decporcentaje = (intCantidad * 100) / (intCantidad+intRefenrecia);
+						ltListaPersonal.Text = ltListaPersonal.Text + String.Format("<li class='dropdown-progress'><a href='javascript:void(0);'><div class='dropdown-label'><span class='text-light'>{0}</span>" +
+										"<strong class='pull-right'>{1}%</strong></div><div class='progress'><div class='progress-bar progress-bar-danger' style='width: 100%'></div></div></a></li><!--end .dropdown-progress -->", 
+										"1 semestre pel. ref", decporcentaje);
+					}
+					ltListaPersonal.Text += "</ul><!--end .dropdown-menu --></li><!--end .dropdown --></ul><!--end .header-nav-options -->";
+				}
+			}
+			return ltListaPersonal.Text;
+			//Anno,Mes,Sum(Total)Pelicula,Sum(Referencia)as Referencia
+			//return "" +
+			//			"" +
+			//				"" +
+			//					"" +
+			//				"" +
+			//				"" +
+			//					"" +
+			//					"<li class='dropdown-progress'>" +
+			//						"<a href='javascript:void(0);'>" +
+			//							"<div class='dropdown-label'>" +
+			//								"<span class='text-light'>1 semestre</span>" +
+			//								"<strong class='pull-right'>93%</strong>" +
+			//							"</div>" +
+			//							"<div class='progress'><div class='progress-bar progress-bar-danger' style='width: 100%'></div></div>" +
+			//						"</a> " +
+			//					"</li><!--end .dropdown-progress -->" +
+			//					"<li class='dropdown-progress'>" +
+			//						"<a href='javascript:void(0);'>" +
+			//							"<div class='dropdown-label'>" +
+			//								"<span class='text-light'>2 semestre</span>" +
+			//								"<strong class='pull-right'>30%</strong>" +
+			//							"</div>" +
+			//							"<div class='progress'><div class='progress-bar progress-bar-success' style='width: 100%'></div></div>" +
+			//						"</a> " +
+			//					"</li><!--end .dropdown-progress -->" +
+			//					"<li class='dropdown-progress'>" +
+			//						"<a href='javascript:void(0);'>" +
+			//							"<div class='dropdown-label'>" +
+			//								"<span class='text-light'>3 semestre</span>" +
+			//								"<strong class='pull-right'>74%</strong>" +
+			//							"</div>" +
+			//							"<div class='progress'><div class='progress-bar progress-bar-warning' style='width: 100%'></div></div>" +
+			//						"</a>" +
+			//					"</li><!--end .dropdown-progress -->" +
+			//				"" +
+			//			"" +
+			//		"";
 		}
 		private void HabiliarDesabilitarMenu(int intPerfil)
 		{
