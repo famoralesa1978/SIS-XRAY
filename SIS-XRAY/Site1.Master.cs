@@ -74,61 +74,27 @@ namespace SIS_XRAY
 			{
 				if (ds.Tables[0].Rows.Count > 0)
 				{
-
+					string[] arrCol = { "progress-bar-danger", "progress-bar-success", "progress-bar-warning", "progress-bar-danger" };
 					ltListaPersonal.Text = "<ul class='header-nav header-nav-options'><li class='dropdown hidden-xs'><a href='javascript:void(0);' class='btn btn-icon-toggle btn-default' data-toggle='dropdown'>";
 					ltListaPersonal.Text += "<i class='fa fa-area-chart'></i></a><ul class='dropdown-menu animation-expand'><li class='dropdown-header'><FONT SIZE=4>Personal controlado<br>por trimestre</FONT></li>";
 					//ltListaPersonal.Text += "<i class='md md-close'></i></a></div></div><div class='offcanvas-body no-padding'><ul class='list '>";
 					for (int intFila = 0; intFila < ds.Tables[0].Rows.Count; intFila++)
-					{
+					{//Anno,Mes
 						int intCantidad = (int)ds.Tables[0].Rows[intFila]["Pelicula"];
 						int intRefenrecia = (int)ds.Tables[0].Rows[intFila]["Referencia"];
+						int intAnno = (int)ds.Tables[0].Rows[intFila]["Anno"];
+						int intMes = ((int)ds.Tables[0].Rows[intFila]["Mes"] /3);
 						decimal decporcentaje = (intCantidad * 100) / (intCantidad+intRefenrecia);
 						ltListaPersonal.Text = ltListaPersonal.Text + String.Format("<li class='dropdown-progress'><a href='javascript:void(0);'><div class='dropdown-label'><span class='text-light'>{0}</span>" +
-										"<strong class='pull-right'>{1}%</strong></div><div class='progress'><div class='progress-bar progress-bar-danger' style='width: 100%'></div></div></a></li><!--end .dropdown-progress -->", 
-										"1 semestre pel. ref", decporcentaje);
+										"<strong class='pull-right'>{1}%</strong></div><div class='progress'><div class='progress-bar {2}' style='width: 100%'></div></div></a></li><!--end .dropdown-progress -->",
+										intAnno.ToString() + " " + intMes.ToString() + " semestre pel: " + intCantidad.ToString() + ", ref: " + intRefenrecia.ToString(), decporcentaje, arrCol[intFila]);
 					}
 					ltListaPersonal.Text += "</ul><!--end .dropdown-menu --></li><!--end .dropdown --></ul><!--end .header-nav-options -->";
 				}
 			}
+			
+
 			return ltListaPersonal.Text;
-			//Anno,Mes,Sum(Total)Pelicula,Sum(Referencia)as Referencia
-			//return "" +
-			//			"" +
-			//				"" +
-			//					"" +
-			//				"" +
-			//				"" +
-			//					"" +
-			//					"<li class='dropdown-progress'>" +
-			//						"<a href='javascript:void(0);'>" +
-			//							"<div class='dropdown-label'>" +
-			//								"<span class='text-light'>1 semestre</span>" +
-			//								"<strong class='pull-right'>93%</strong>" +
-			//							"</div>" +
-			//							"<div class='progress'><div class='progress-bar progress-bar-danger' style='width: 100%'></div></div>" +
-			//						"</a> " +
-			//					"</li><!--end .dropdown-progress -->" +
-			//					"<li class='dropdown-progress'>" +
-			//						"<a href='javascript:void(0);'>" +
-			//							"<div class='dropdown-label'>" +
-			//								"<span class='text-light'>2 semestre</span>" +
-			//								"<strong class='pull-right'>30%</strong>" +
-			//							"</div>" +
-			//							"<div class='progress'><div class='progress-bar progress-bar-success' style='width: 100%'></div></div>" +
-			//						"</a> " +
-			//					"</li><!--end .dropdown-progress -->" +
-			//					"<li class='dropdown-progress'>" +
-			//						"<a href='javascript:void(0);'>" +
-			//							"<div class='dropdown-label'>" +
-			//								"<span class='text-light'>3 semestre</span>" +
-			//								"<strong class='pull-right'>74%</strong>" +
-			//							"</div>" +
-			//							"<div class='progress'><div class='progress-bar progress-bar-warning' style='width: 100%'></div></div>" +
-			//						"</a>" +
-			//					"</li><!--end .dropdown-progress -->" +
-			//				"" +
-			//			"" +
-			//		"";
 		}
 		private void HabiliarDesabilitarMenu(int intPerfil)
 		{
@@ -173,10 +139,8 @@ namespace SIS_XRAY
 							"</a>" +
 							"<!--start submenu -->" +
 							"<ul>" +
-								"<li><a href = '../../html/mail/inbox.html' class='active'><span class='title'>Inbox</span></a></li>" +
-								"<li><a href = '../../html/mail/compose.html' ><span class='title'>Compose</span></a></li>" +
-								"<li><a href = '../../html/mail/reply.html' ><span class='title'>Reply</span></a></li> " +
-								"<li><a href = '../../html/mail/message.html' ><span class='title'>View message</span></a></li>" +
+								"<li><a href = '{0}Contacto/Contacto.aspx' class='active'><span class='title'>Contacto</span></a></li>" +
+								"<li><a href = '{0}Contacto/EnviarConsulta.aspx' ><span class='title'>consulta</span></a></li>" +
 							"</ul><!--end /submenu -->" +
 						"</li><!--end /menu-li --> " +
 						"<!-- END EMAIL -->" +
