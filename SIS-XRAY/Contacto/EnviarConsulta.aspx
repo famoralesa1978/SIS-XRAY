@@ -11,13 +11,13 @@
 						<div class="row">
 							<!-- BEGIN MAIL COMPOSE -->
 							<div class="col-sm-8 col-md-9 col-lg-10">
-								<h3>Consulta</h3>
-								<form class="form" id="formCompose">
-									<div class="form-group floating-label">
+								<h3>Enviar consulta</h3>
+								<form class="form" id="formCompose" >
+									<%--<div class="form-group floating-label">
 										<input type="email" class="form-control" id="to1" name="to1" >
 										<label for="to1">To</label>
 										<a class="link-default pull-right" href="#emailOptions" data-toggle="collapse">More</a>
-									</div><!--end .form-group -->
+									</div><!--end .form-group -->--%>
 									<div id="emailOptions" class="collapse">
 										<div class="form-group floating-label">
 											<input type="email" class="form-control" id="cc1" name="cc1" >
@@ -46,10 +46,10 @@
 					<!-- BEGIN SECTION ACTION -->
 					<div class="section-action style-primary">
 						<div class="section-action-row">
-							<a class="btn ink-reaction btn-icon-toggle" href="../../html/mail/inbox.html"><i class="fa fa-chevron-left"></i></a>
+							<a class="btn ink-reaction btn-icon-toggle" href="../Principal.aspx"><i class="fa fa-chevron-left"></i></a>
 						</div>
 						<div class="section-floating-action-row">
-							<a class="btn ink-reaction btn-floating-action btn-lg btn-accent" href="#formCompose" data-submit="form"><i class="md md-send"></i></a>
+							<asp:Button ID="btnEnviar" class="btn btn-block ink-reaction btn-accent-light" runat="server" Text="Enviar correo" ValidationGroup="Ingresar" OnClick="btnEnviar_Click" />
 						</div>
 					</div>
 					<!-- END SECTION ACTION -->

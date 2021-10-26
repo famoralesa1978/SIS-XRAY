@@ -13,5 +13,10 @@ namespace SIS_XRAY.Contacto
 		{
 
 		}
+
+		protected void btnEnviar_Click(object sender, EventArgs e)
+		{
+			int a = 1;
+		}
 	}
 }

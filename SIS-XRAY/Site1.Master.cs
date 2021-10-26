@@ -139,7 +139,7 @@ namespace SIS_XRAY
 							"</a>" +
 							"<!--start submenu -->" +
 							"<ul>" +
-								"<li><a href = '{0}Contacto/Contacto.aspx' class='active'><span class='title'>Contacto</span></a></li>" +
+								//"<li><a href = '{0}Contacto/Contacto.aspx' class='active'><span class='title'>Contacto</span></a></li>" +
 								"<li><a href = '{0}Contacto/EnviarConsulta.aspx' ><span class='title'>consulta</span></a></li>" +
 							"</ul><!--end /submenu -->" +
 						"</li><!--end /menu-li --> " +

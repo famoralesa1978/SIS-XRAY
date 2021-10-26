@@ -16,7 +16,6 @@
 									<div class="form-group floating-label">
 										<input type="email" class="form-control" id="to1" name="to1" >
 										<label for="to1">To</label>
-										<a class="link-default pull-right" href="#emailOptions" data-toggle="collapse">More</a>
 									</div><!--end .form-group -->
 									<div id="emailOptions" class="collapse">
 										<div class="form-group floating-label">
