@@ -115,6 +115,43 @@ namespace Clases
             //    return false;
             //}
         }
+    public Boolean SendMailDudasOConsulta(string Asunto, string Correo, string Mensaje)
+    {
+      try
+      {
+        Email.CargarConfiguracion();
+        MailMessage correos = new MailMessage();
+        SmtpClient envios = new SmtpClient();
+        correos.To.Clear();
+        correos.Body = "";
+        correos.Subject = Asunto;
+        correos.IsBodyHtml = true;
+        correos.To.Add(Email.Desde);
+        Correo = "fmorales_arenas@hotmail.com";
+        correos.CC.Add(Correo);
+        string strMensaje = Mensaje;
+        string htmlBody = Mensaje;
+        correos.Body = htmlBody;
+        correos.From = new MailAddress(Email.Desde);
+        envios.Credentials = new NetworkCredential(Email.Credencial, encDesc.DecryptTripleDES(Email.Clave));
 
+        //Datos importantes no modificables para tene¿¿r acceso a las cuentas
+
+        envios.Host = Email.Host;
+        envios.Port = Email.Port;
+        envios.EnableSsl = true;
+
+        envios.Send(correos);
+        //MessageBox.Show("El mensaje fue enviado correctamente");
+        return true;
+      }
+      catch (Exception ex)
+      {
+        //MessageBox.Show(ex.Message, "No se envio el correo correctamente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        return false;
+      }
+    
     }
+
+  }
 }

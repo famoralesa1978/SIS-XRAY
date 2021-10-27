@@ -64,8 +64,8 @@ namespace SIS_XRAY
 						clsUsu.Perfil = ds.Tables[0].Rows[0]["Descripcion"].ToString();
 						clsUsu.Nombre = ds.Tables[0].Rows[0]["Razon_Social"].ToString();
 						clsUsu.Rut = ds.Tables[0].Rows[0]["rut"].ToString();
-						clsUsu.Id_Usuario= ds.Tables[0].Rows[0]["Id_cliente"].ToString(); 
-						// TransferirSegunPerfil(usr);
+						clsUsu.Id_Usuario= ds.Tables[0].Rows[0]["Id_cliente"].ToString(); //
+						clsUsu.Email = ds.Tables[0].Rows[0]["Email"].ToString();                                                                // TransferirSegunPerfil(usr);
 						Response.Redirect("Principal.aspx");
 						break;
 					default://cuando tiene mas perfiles asociado.

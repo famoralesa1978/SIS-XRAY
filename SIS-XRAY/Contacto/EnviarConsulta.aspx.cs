@@ -9,6 +9,7 @@ namespace SIS_XRAY.Contacto
 {
 	public partial class EnviarConsulta : System.Web.UI.Page
 	{
+		Clases.clsUtilidades clsutil = new Clases.clsUtilidades();
 		protected void Page_Load(object sender, EventArgs e)
 		{
 
@@ -16,7 +17,8 @@ namespace SIS_XRAY.Contacto
 
 		protected void btnEnviar_Click(object sender, EventArgs e)
 		{
-			int a = 1;
+			Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
+			clsutil.SendMailDudasOConsulta(Subject1.Value, clsUsu.Email, message.Value);
 		}
 	}
 }

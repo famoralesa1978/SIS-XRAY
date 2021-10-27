@@ -15,6 +15,20 @@ namespace Clases
 		private static string intId_Usuario;
 		private static int intId_perfil;
 		private static string strContraseña;
+		private static string strEmail;
+
+		public string Email
+		{
+			get
+			{
+				return strEmail;
+			}
+			set
+			{
+				strEmail = value;  // value is an implicit parameter
+			}
+
+		}
 		public string Id_Usuario
 		{
 			get
