@@ -4,26 +4,29 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>X-Ray</title>
 
-		<!-- BEGIN META -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="keywords" content="your,keywords">
-		<meta name="description" content="Short explanation about this website">
-		<!-- END META -->
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="your,keywords">
+    <meta name="description" content="Short explanation about this website">
+    <!-- END META -->
 
-		<!-- BEGIN STYLESHEETS -->
-		<link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css'/>
-		<link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/bootstrap.css?1422792965" />
-		<link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/materialadmin.css?1425466319" />
-		<link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/font-awesome.min.css?1422529194" />
-		<link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
-		<link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/libs/summernote/summernote.css?1425218701" />
-		<!-- END STYLESHEETS -->
+    <!-- BEGIN STYLESHEETS -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300italic,400italic,300,400,500,700,900' rel='stylesheet' type='text/css' />
+    <link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/bootstrap.css?1422792965" />
+    <link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/materialadmin.css?1425466319" />
+    <link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/font-awesome.min.css?1422529194" />
+    <link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/material-design-iconic-font.min.css?1421434286" />
+    <link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/libs/summernote/summernote.css?1425218701" />
+    <link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/libs/select2/select2.css?1424887856" />
+    <link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/libs/multi-select/multi-select.css?1424887857" />
+    <link type="text/css" rel="stylesheet" href="<%=Page.ResolveUrl("~/")%>Recursos/assets/css/theme-default/libs/dropzone/dropzone-theme.css?1424887864" />
+    <!-- END STYLESHEETS -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!--[if lt IE 9]>
+    <!--[if lt IE 9]>
 		<script type="text/javascript" src="../../Recursos/assets/js/libs/utils/html5shiv.js?1403934957"></script>
 		<script type="text/javascript" src="../../Recursos/assets/js/libs/utils/respond.min.js?1403934956"></script>
 		<![endif]-->
@@ -32,106 +35,116 @@
 </head>
 <body class="menubar-hoverable header-fixed menubar-pin ">
     <form id="form1" runat="server">
-    <!-- BEGIN HEADER-->
-		<header id="header" >
-			<div class="headerbar">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="headerbar-left">
-					<ul class="header-nav header-nav-options">
-						<li class="header-nav-brand" >
-							<div class="brand-holder">
-								<asp:HyperLink ID="HyperLink1" CssClass="text-lg text-bold text-primary" NavigateUrl="~/Principal.aspx" runat="server">Xray informes</asp:HyperLink>
-							</div>
-						</li>
-						<li>
-							<a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
-								<i class="fa fa-bars"></i>
-							</a>
-						</li>
-					</ul>
-				</div>
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="headerbar-right">
-					<asp:Substitution ID="SubPersonalControlado" runat="server" MethodName="GetPersonalControlado" />
-					<ul class="header-nav header-nav-profile">
-						<li class="dropdown">
-							<a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
-								<img src="<%=Page.ResolveUrl("~/")%>Recursos/img/Cliente.png" alt="" />
-								<span class="profile-info">
-									<asp:Label ID="lbl_Nombre" runat="server" Text="Nombre"></asp:Label>
-									<small>
+        <!-- BEGIN HEADER-->
+        <header id="header">
+            <div class="headerbar">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="headerbar-left">
+                    <ul class="header-nav header-nav-options">
+                        <li class="header-nav-brand">
+                            <div class="brand-holder">
+                                <asp:HyperLink ID="HyperLink1" CssClass="text-lg text-bold text-primary" NavigateUrl="~/Principal.aspx" runat="server">Xray informes</asp:HyperLink>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="btn btn-icon-toggle menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="headerbar-right">
+                    <asp:Substitution ID="SubPersonalControlado" runat="server" MethodName="GetPersonalControlado" />
+                    <ul class="header-nav header-nav-profile">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle ink-reaction" data-toggle="dropdown">
+                                <img src="<%=Page.ResolveUrl("~/")%>Recursos/img/Cliente.png" alt="" />
+                                <span class="profile-info">
+                                    <asp:Label ID="lbl_Nombre" runat="server" Text="Nombre"></asp:Label>
+                                    <small>
                                         <asp:Label ID="lbl_Perfil" runat="server" Text="perfil"></asp:Label></small>
-								</span>
-							</a>
-							<ul class="dropdown-menu animation-dock">
-								<li class="dropdown-header">Config</li>
-								<li><a href="../../html/pages/profile.html"> Mi perfil</a></li>
-								<li><a href="../../html/pages/calendar.html">Calendario</a></li>
-								<li class="divider"></li>								
-								<li><a href="<%= Page.ResolveUrl("~/index.aspx") %>"><i class="fa fa-fw fa-power-off text-danger"></i> Logout</a></li>
-							</ul><!--end .dropdown-menu -->
-						</li><!--end .dropdown -->
-					</ul><!--end .header-nav-profile -->
-					<ul class="header-nav header-nav-toggle">
-						<li>
-							<a class="btn btn-icon-toggle btn-default" href="#offcanvas-search" data-toggle="offcanvas" data-backdrop="false">
-								<i class="fa fa-ellipsis-v"></i>
-							</a>
-						</li>
-					</ul><!--end .header-nav-toggle -->
-				</div><!--end #header-navbar-collapse -->
-			</div>
-		</header>
-		<!-- END HEADER-->
-    <!-- BEGIN BASE-->
-		<div id="base">
-    <!-- BEGIN OFFCANVAS LEFT -->
-			<div class="offcanvas">
-			</div><!--end .offcanvas-->
-			<!-- END OFFCANVAS LEFT -->    <!-- BEGIN CONTENT-->
-			<div id="content">
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu animation-dock">
+                                <li class="dropdown-header">Config</li>
+                                <li><a href="../../html/pages/profile.html">Mi perfil</a></li>
+                                <li><a href="../../html/pages/calendar.html">Calendario</a></li>
+                                <li class="divider"></li>
+                                <li><a href="<%= Page.ResolveUrl("~/index.aspx") %>"><i class="fa fa-fw fa-power-off text-danger"></i>Logout</a></li>
+                            </ul>
+                            <!--end .dropdown-menu -->
+                        </li>
+                        <!--end .dropdown -->
+                    </ul>
+                    <!--end .header-nav-profile -->
+                    <ul class="header-nav header-nav-toggle">
+                        <li>
+                            <a class="btn btn-icon-toggle btn-default" href="#offcanvas-search" data-toggle="offcanvas" data-backdrop="false">
+                                <i class="fa fa-ellipsis-v"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--end .header-nav-toggle -->
+                </div>
+                <!--end #header-navbar-collapse -->
+            </div>
+        </header>
+        <!-- END HEADER-->
+        <!-- BEGIN BASE-->
+        <div id="base">
+            <!-- BEGIN OFFCANVAS LEFT -->
+            <div class="offcanvas">
+            </div>
+            <!--end .offcanvas-->
+            <!-- END OFFCANVAS LEFT -->
+            <!-- BEGIN CONTENT-->
+            <div id="content">
 
-				<!-- BEGIN LIST SAMPLES -->
-					 <div>
-                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                        </asp:ContentPlaceHolder>
+                <!-- BEGIN LIST SAMPLES -->
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+            </div>
+            <!--end #content-->
+            <!-- END CONTENT -->
+
+            <!-- BEGIN MENUBAR-->
+            <div id="menubar" class="menubar-inverse ">
+                <div class="menubar-fixed-panel">
+                    <div>
+                        <a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
+                            <i class="fa fa-bars"></i>
+                        </a>
                     </div>
-               
-			</div><!--end #content-->
-			<!-- END CONTENT -->
-   
-    <!-- BEGIN MENUBAR-->
-			<div id="menubar" class="menubar-inverse ">
-				<div class="menubar-fixed-panel">
-					<div>
-						<a class="btn btn-icon-toggle btn-default menubar-toggle" data-toggle="menubar" href="javascript:void(0);">
-							<i class="fa fa-bars"></i>
-						</a>
-					</div>
-					<div class="expanded">
-						<a href="../../html/dashboards/dashboard.html">
-							<span class="text-lg text-bold text-primary ">XRAY</span>
-						</a>
-					</div>
-				</div>
-				<div class="menubar-scroll-panel">
+                    <div class="expanded">
+                        <a href="../../html/dashboards/dashboard.html">
+                            <span class="text-lg text-bold text-primary ">XRAY</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="menubar-scroll-panel">
                     <asp:Literal ID="ltMenu" runat="server"></asp:Literal>
-		
-					<div class="menubar-foot-panel">
-						<small class="no-linebreak hidden-folded">
-							<span class="opacity-75">Copyright &copy; 2020</span> <strong>Felipe Morales</strong>
-						</small>
-					</div>
-				</div><!--end .menubar-scroll-panel-->
-			</div><!--end #menubar-->
-			<!-- END MENUBAR -->
 
-			<!-- BEGIN OFFCANVAS RIGHT -->
-			<div class="offcanvas">
+                    <div class="menubar-foot-panel">
+                        <small class="no-linebreak hidden-folded">
+                            <span class="opacity-75">Copyright &copy; 2020</span> <strong>Felipe Morales</strong>
+                        </small>
+                    </div>
+                </div>
+                <!--end .menubar-scroll-panel-->
+            </div>
+            <!--end #menubar-->
+            <!-- END MENUBAR -->
 
-				<!-- BEGIN OFFCANVAS SEARCH -->
-				<asp:Substitution ID="subListadoPersonal" runat="server" MethodName="GetListadoPersonal" />
-				<%--<div id="offcanvas-search" class="offcanvas-pane width-8">
+            <!-- BEGIN OFFCANVAS RIGHT -->
+            <div class="offcanvas">
+
+                <!-- BEGIN OFFCANVAS SEARCH -->
+                <asp:Substitution ID="subListadoPersonal" runat="server" MethodName="GetListadoPersonal" />
+                <%--<div id="offcanvas-search" class="offcanvas-pane width-8">
 					<div class="offcanvas-head">
 						<header class="text-primary">Personal</header>
 						<div class="offcanvas-tools">
@@ -146,9 +159,9 @@
 						</ul>
 					</div><!--end .offcanvas-body -->
 				</div><!--end .offcanvas-pane -->--%>
-				<!-- END OFFCANVAS SEARCH -->
+                <!-- END OFFCANVAS SEARCH -->
 
-<%--				<!-- BEGIN OFFCANVAS CHAT -->
+                <%--				<!-- BEGIN OFFCANVAS CHAT -->
 				<div id="offcanvas-chat" class="offcanvas-pane style-default-light width-12">
 					<div class="offcanvas-head style-default-bright">
 						<header class="text-primary">Chat with Ann Laurens</header>
@@ -227,33 +240,38 @@
 					</div><!--end .offcanvas-body -->
 				</div><!--end .offcanvas-pane -->
 				<!-- END OFFCANVAS CHAT -->--%>
+            </div>
+            <!--end .offcanvas-->
+            <!-- END OFFCANVAS RIGHT -->
 
-			</div><!--end .offcanvas-->
-			<!-- END OFFCANVAS RIGHT -->
-
-		</div><!--end #base-->
-     </form>
-		<!-- END BASE -->
+        </div>
+        <!--end #base-->
+    </form>
+    <!-- END BASE -->
     <!-- BEGIN JAVASCRIPT -->
 
-	<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/bootstrap/bootstrap.min.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/spin.js/spin.min.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursosassets/js/libs/autosize/jquery.autosize.min.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/ckeditor/ckeditor.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/ckeditor/adapters/jquery.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/summernote/summernote.min.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/App.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/AppNavigation.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets//js/core/source/AppOffcanvas.js"></script>
-		<script src=".<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/AppCard.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/AppForm.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/AppNavSearch.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/AppVendor.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/demo/Demo.js"></script>
-		<script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/demo/DemoFormEditors.js"></script>
-		<!-- END JAVASCRIPT -->    
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/jquery/jquery-1.11.2.min.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/jquery/jquery-migrate-1.2.1.min.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/spin.js/spin.min.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursosassets/js/libs/autosize/jquery.autosize.min.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/nanoscroller/jquery.nanoscroller.min.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/ckeditor/ckeditor.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/ckeditor/adapters/jquery.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/summernote/summernote.min.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/App.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/dropzone/dropzone.min.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/select2/select2.min.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/libs/multi-select/jquery.multi-select.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/AppNavigation.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets//js/core/source/AppOffcanvas.js"></script>
+    <script src=".<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/AppCard.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/AppForm.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/AppNavSearch.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/source/AppVendor.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/demo/Demo.js"></script>
+    <script src="<%=Page.ResolveUrl("~/")%>Recursos/assets/js/core/demo/DemoFormEditors.js"></script>
+   
+    <!-- END JAVASCRIPT -->
 </body>
 </html>

@@ -144,6 +144,19 @@ namespace SIS_XRAY
 							"</ul><!--end /submenu -->" +
 						"</li><!--end /menu-li --> " +
 						"<!-- END EMAIL -->" +
+							"<!--BEGIN Documento-->" +
+						"<li class='gui-folder'>" +
+							"<a>" +
+								"<div class='gui-icon'><i class='md-folder'></i></div>" +
+								"<span class='title'>Documento</span>" +
+							"</a>" +
+							"<!--start submenu -->" +
+							"<ul>" +
+								//"<li><a href = '{0}Contacto/Contacto.aspx' class='active'><span class='title'>Contacto</span></a></li>" +
+								"<li><a href = '{0}Documento/Documentos.aspx' ><span class='title'>Informes</span></a></li>" +
+							"</ul><!--end /submenu -->" +
+						"</li><!--end /menu-li --> " +
+						"<!-- END Documento -->" +
 					"</ul ><!--end.main - menu-->" +
 					"<!--END MAIN MENU -->" +
 				"</div ><!--end.menubar - scroll - panel-->" +

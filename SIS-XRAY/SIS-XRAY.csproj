@@ -178,6 +178,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Contacto\Contacto.aspx" />
+    <Content Include="Documento\Documentos.aspx" />
     <Content Include="RecupararClave.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Global.asax" />
@@ -2065,6 +2066,13 @@
     <Compile Include="Contacto\EnviarConsulta.aspx.designer.cs">
       <DependentUpon>EnviarConsulta.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Documento\Documentos.aspx.cs">
+      <DependentUpon>Documentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Documento\Documentos.aspx.designer.cs">
+      <DependentUpon>Documentos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RecupararClave.aspx.cs">
       <DependentUpon>RecupararClave.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2122,7 +2130,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Documento\" />
     <Folder Include="Models\" />
     <Folder Include="Recursos\assets\js\core\cache\" />
   </ItemGroup>
