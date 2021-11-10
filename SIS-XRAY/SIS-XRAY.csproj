@@ -1672,6 +1672,7 @@
     <Content Include="Recursos\assets\less\libs\multi-select\LICENSE.txt" />
     <Content Include="Recursos\assets\less\libs\wizard\MIT-LICENSE.txt" />
     <Content Include="Recursos\css\Login.css" />
+    <Content Include="Recursos\img\ArchivoDocumento.png" />
     <Content Include="Recursos\img\Cliente.png" />
     <Content Include="Recursos\img\Home.png" />
     <Content Include="Recursos\js\general.js" />

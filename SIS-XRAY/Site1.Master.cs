@@ -147,7 +147,7 @@ namespace SIS_XRAY
 							"<!--BEGIN Documento-->" +
 						"<li class='gui-folder'>" +
 							"<a>" +
-								"<div class='gui-icon'><i class='md-folder'></i></div>" +
+								"<div class='gui-icon'><center><i class='md-description'></i></center></div>" +
 								"<span class='title'>Documento</span>" +
 							"</a>" +
 							"<!--start submenu -->" +
