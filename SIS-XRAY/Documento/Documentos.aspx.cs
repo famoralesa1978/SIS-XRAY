@@ -15,7 +15,7 @@ namespace SIS_XRAY
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			if (!IsPostBack)
-				GetListadoTipoDocumento2();
+				GetListadoTipoDocumento();
 		}
 		public static String GetListadoAnno(HttpContext context)
 		{
@@ -44,35 +44,7 @@ namespace SIS_XRAY
 			}
 			return ltAnno.Text;
 		}
-		public static String GetListadoTipoDocumento(HttpContext context)
-		{
-			clsConexion cn = new Conexion.clsConexion();
-			Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
-			String strMensaje = "";
-			Literal ltAnno = new Literal();
-			SqlCommand cmd = new SqlCommand();
-			DataSet ds;
-			cmd.CommandText = String.Format("pa_TipoDocumentoWEB");
-			cmd.CommandType = CommandType.Text;
-			ds = cn.Listar(System.Configuration.ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
-
-			if (strMensaje == "OK")
-			{
-				if (ds.Tables[0].Rows.Count > 0)
-				{
-
-					ltAnno.Text += "<optgroup label='Tipo documento'> ";
-					for (int intFila = 0; intFila < ds.Tables[0].Rows.Count; intFila++)
-					{
-						ltAnno.Text += String.Format("<option value = '{0}'>{1}</option>", ds.Tables[0].Rows[intFila]["id_tipo_doc"].ToString(), ds.Tables[0].Rows[intFila]["detalle_tipo_documento"].ToString());
-					}
-					ltAnno.Text += "</optgroup> ";
-				}
-			}
-			return ltAnno.Text;
-		}
-
-		public void GetListadoTipoDocumento2()
+		public void GetListadoTipoDocumento()
 		{
 			clsConexion cn = new Conexion.clsConexion();
 			Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
@@ -103,7 +75,7 @@ namespace SIS_XRAY
 
 		protected void btnBuscar_Click(object sender, EventArgs e)
 		{
-			String aa = "aaaa";
+			String aa = ListTipoDocumento.Value;
 		}
 	}
 }
