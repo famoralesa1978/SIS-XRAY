@@ -15,7 +15,11 @@ namespace SIS_XRAY
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			if (!IsPostBack)
+			{
 				GetListadoTipoDocumento();
+				GetListadoAnno();
+			}
+				
 		}
 		public static String GetListadoAnno(HttpContext context)
 		{
@@ -43,6 +47,35 @@ namespace SIS_XRAY
 				}
 			}
 			return ltAnno.Text;
+		}
+
+		public void GetListadoAnno()
+		{
+			clsConexion cn = new Conexion.clsConexion();
+			Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
+			String strMensaje = "";
+			Literal ltAnno = new Literal();
+			SqlCommand cmd = new SqlCommand();
+			DataSet ds;
+			cmd.CommandText = String.Format("pa_AnnoWEB '{0}',{1}", clsUsu.Rut, clsUsu.Id_Usuario);
+			cmd.CommandType = CommandType.Text;
+			ds = cn.Listar(System.Configuration.ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
+
+			if (strMensaje == "OK")
+			{
+				if (ds.Tables[0].Rows.Count > 0)
+				{
+					ListItem lt;
+					for (int intFila = 0; intFila < ds.Tables[0].Rows.Count; intFila++)
+					{
+						lt = new ListItem();
+
+						lt.Value = ds.Tables[0].Rows[intFila]["Anno"].ToString();
+						lt.Text = ds.Tables[0].Rows[intFila]["Anno"].ToString();
+						ListAnnio.Items.Add(lt);
+					}
+				}
+			}
 		}
 		public void GetListadoTipoDocumento()
 		{
@@ -76,6 +109,8 @@ namespace SIS_XRAY
 		protected void btnBuscar_Click(object sender, EventArgs e)
 		{
 			String aa = ListTipoDocumento.Value;
+			String aaa = ListAnnio.Value;
+
 		}
 	}
 }

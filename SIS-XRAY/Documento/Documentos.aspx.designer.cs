@@ -24,13 +24,13 @@ namespace SIS_XRAY
 		protected global::System.Web.UI.WebControls.Image Image1;
 
 		/// <summary>
-		/// Control subAnno.
+		/// Control ListAnnio.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Substitution subAnno;
+		protected global::System.Web.UI.HtmlControls.HtmlSelect ListAnnio;
 
 		/// <summary>
 		/// Control ListTipoDocumento.

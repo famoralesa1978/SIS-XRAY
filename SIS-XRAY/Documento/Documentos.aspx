@@ -32,8 +32,9 @@
 										<form class="form">
 											<div class="form-group">
 												<label>Año</label>
-												<select class="form-control select2-list" >
-													<asp:Substitution ID="subAnno" runat="server" MethodName="GetListadoAnno" />
+												
+												<select class="form-control select2-list" id="ListAnnio"  runat="server">
+												<%--	<asp:Substitution ID="subTipoDocumento" runat="server" MethodName="GetListadoTipoDocumento" />--%>
 													
 												</select>
 											</div>
@@ -64,6 +65,88 @@
 								</div><!--end .card -->
 							</div><!--end .col -->
 						</div><!--end .row -->
+						<div class="row">
+							<div class="col-lg-12">
+								<h4>Listado  de documento</h4>
+							</div><!--end .col -->
+							<div class="col-lg-12">
+								<div class="card">
+									<div class="card-body no-padding">
+										<div class="table-responsive no-margin">
+											<table class="table table-striped no-margin">
+												<thead>
+													<tr>
+														<th>#</th>
+														<th>Table heading</th>
+														<th>Table heading</th>
+														<th>Table heading</th>
+														<th>Table heading</th>
+														<th>Table heading</th>
+														<th>Table heading</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+													</tr>
+													<tr>
+														<td>3</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+													</tr>
+													<tr>
+														<td>4</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+													</tr>
+													<tr>
+														<td>5</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+													</tr>
+													<tr>
+														<td>6</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+														<td>Table cell</td>
+													</tr>
+												</tbody>
+											</table>
+										</div><!--end .table-responsive -->
+									</div><!--end .card-body -->
+								</div><!--end .card -->
+							</div><!--end .col -->
+						</div>
 					</div><!--end .section-body -->
 				</section>
 			</div><!--end #content-->
