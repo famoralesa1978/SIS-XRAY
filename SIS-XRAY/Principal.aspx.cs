@@ -16,9 +16,9 @@ namespace SIS_XRAY
         Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
         clsConexion cn = new Conexion.clsConexion();
 
-        protected void Page_Load(object sender, EventArgs e)
-        {
-     
+    protected void Page_Load(object sender, EventArgs e)
+    {
     }
+    
   }
 }

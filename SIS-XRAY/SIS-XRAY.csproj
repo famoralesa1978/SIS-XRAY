@@ -179,6 +179,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Contacto\Contacto.aspx" />
     <Content Include="Documento\Documentos.aspx" />
+    <Content Include="Documento\Descarga.aspx" />
     <Content Include="RecupararClave.aspx" />
     <Content Include="Principal.aspx" />
     <Content Include="Global.asax" />
@@ -1674,6 +1675,7 @@
     <Content Include="Recursos\css\Login.css" />
     <Content Include="Recursos\img\ArchivoDocumento.png" />
     <Content Include="Recursos\img\Cliente.png" />
+    <Content Include="Recursos\img\download24.png" />
     <Content Include="Recursos\img\Home.png" />
     <Content Include="Recursos\js\general.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -2074,6 +2076,13 @@
     <Compile Include="Documento\Documentos.aspx.designer.cs">
       <DependentUpon>Documentos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Documento\Descarga.aspx.cs">
+      <DependentUpon>Descarga.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Documento\Descarga.aspx.designer.cs">
+      <DependentUpon>Descarga.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RecupararClave.aspx.cs">
       <DependentUpon>RecupararClave.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2131,6 +2140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Descarga\" />
     <Folder Include="Models\" />
     <Folder Include="Recursos\assets\js\core\cache\" />
   </ItemGroup>
