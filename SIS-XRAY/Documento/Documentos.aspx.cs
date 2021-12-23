@@ -123,14 +123,14 @@ namespace SIS_XRAY
 			if (strMensaje == "OK")
 			{
 				ltTabla.Text = "<table class='table table-striped no-margin'>";
-				ltTabla.Text += "<thead><tr><th>#</th><th>Año</th><th>Mes</th><th>Nombre</th><th>Descripción</th><th>Tipo documento</th><th>Descargar</th></tr></thead>";
+				ltTabla.Text += "<thead><tr><th>#</th><th>Trimestre</th><th>Nombre</th><th>Descripción</th><th>Tipo documento</th><th>Descargar</th></tr></thead>";
 				ltTabla.Text += "<tbody>";
 				if (ds.Tables[0].Rows.Count > 0)
 				{
 					for (int intFila = 0; intFila < ds.Tables[0].Rows.Count; intFila++)
 					{
-						ltTabla.Text += String.Format("<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td><td>{4}</td><td>{5}</td><td>{6}</td></tr>", 
-																		(intFila+1), ListAnnio.Value, ds.Tables[0].Rows[intFila]["Mes"], ds.Tables[0].Rows[intFila]["Nombre"], ds.Tables[0].Rows[intFila]["Descripcion"], ds.Tables[0].Rows[intFila]["Tipo_Documento"],
+						ltTabla.Text += String.Format("<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td><td>{4}</td><td>{5}</td></tr>", 
+																		(intFila+1),ds.Tables[0].Rows[intFila]["Mes"], ds.Tables[0].Rows[intFila]["Nombre"], ds.Tables[0].Rows[intFila]["Descripcion"], ds.Tables[0].Rows[intFila]["Tipo_Documento"],
 																		"<a href='"+ Page.ResolveUrl("~/") + "Documento/Descarga.aspx?P=" + encDesc.GenerateHashMD5(ds.Tables[0].Rows[intFila]["Id_Doc"].ToString()) + "' target='_blank'><img src='"
 																		+ Page.ResolveUrl("~/") + "Recursos/img/download24.png'/></a>");
 					}
