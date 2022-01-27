@@ -591,6 +591,7 @@
     <Content Include="Recursos\assets\img\img14.jpg" />
     <Content Include="Recursos\assets\img\img15.jpg" />
     <Content Include="Recursos\assets\img\img16.jpg" />
+    <Content Include="Recursos\assets\img\img16.png" />
     <Content Include="Recursos\assets\img\img2.jpg" />
     <Content Include="Recursos\assets\img\img3.jpg" />
     <Content Include="Recursos\assets\img\img4.jpg" />
@@ -1678,6 +1679,7 @@
     <Content Include="Recursos\img\Cliente.png" />
     <Content Include="Recursos\img\download24.png" />
     <Content Include="Recursos\img\Home.png" />
+    <Content Include="Recursos\img\logo.png" />
     <Content Include="Recursos\js\general.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

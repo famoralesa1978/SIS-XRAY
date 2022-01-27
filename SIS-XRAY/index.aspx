@@ -15,7 +15,7 @@
 </head>
 <body class="menubar-hoverable header-fixed ">
     <section class="section-account">
-		<div class="img-backdrop" style="background-image: url('../../Recursos/assets/img/img16.jpg')"></div>
+		<div class="img-backdrop" style="background-image: url('../../Recursos/assets/img/img16.png')"></div>
 		<div class="spacer"></div>
 		<div class="card contain-sm style-transparent">
 			<div class="card-body">
