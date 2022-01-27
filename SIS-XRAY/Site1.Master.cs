@@ -155,7 +155,12 @@ namespace SIS_XRAY
 								//"<li><a href = '{0}Contacto/Contacto.aspx' class='active'><span class='title'>Contacto</span></a></li>" +
 								"<li><a href = '{0}Documento/Documentos.aspx' ><span class='title'>Informes</span></a></li>" +
 							"</ul><!--end /submenu -->" +
+							//"<ul>" +
+							//	//"<li><a href = '{0}Contacto/Contacto.aspx' class='active'><span class='title'>Contacto</span></a></li>" +
+							//	"<li><a href = '{0}Documento/EnviarConsultaCertificaciones.aspx' ><span class='title'>Certificados</span></a></li>" +
+							//"</ul><!--end /submenu -->" +
 						"</li><!--end /menu-li --> " +
+
 						"<!-- END Documento -->" +
 					"</ul ><!--end.main - menu-->" +
 					"<!--END MAIN MENU -->" +

@@ -170,6 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Captcha.aspx" />
+    <Content Include="Documento\EnviarConsultaCertificaciones.aspx" />
     <Content Include="Contacto\EnviarConsulta.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -2061,6 +2062,13 @@
     </Compile>
     <Compile Include="Contacto\Contacto.aspx.designer.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Documento\EnviarConsultaCertificaciones.aspx.cs">
+      <DependentUpon>EnviarConsultaCertificaciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Documento\EnviarConsultaCertificaciones.aspx.designer.cs">
+      <DependentUpon>EnviarConsultaCertificaciones.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contacto\EnviarConsulta.aspx.cs">
       <DependentUpon>EnviarConsulta.aspx</DependentUpon>
