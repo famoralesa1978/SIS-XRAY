@@ -14,7 +14,7 @@ namespace SIS_XRAY
 {
 	public partial class index : System.Web.UI.Page
 	{
-		clsConexion cn = new Conexion.clsConexion();
+		private RealAumentada.clsConectorSqlServer cn = new RealAumentada.clsConectorSqlServer();
 		ClsDescriptarEncriptar encDesc = new ClsDescriptarEncriptar();
 		Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
 		protected void Page_Load(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace SIS_XRAY
 			DataSet ds;
 			cmd.CommandText = "pa_loginWeb_sel '" + usr + "','" + encDesc.GenerateHashMD5(psw) + "'";
 			cmd.CommandType = CommandType.Text;
-			ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
+			ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd);
 
 			if (strMensaje == "OK")
 			{

@@ -14,8 +14,8 @@ namespace Clases
 {
     public class clsUtilidades
     {
-        clsConexion cn = new Conexion.clsConexion();
-        ClsEmail Email = new ClsEmail();
+		private RealAumentada.clsConectorSqlServer cn = new RealAumentada.clsConectorSqlServer();
+		ClsEmail Email = new ClsEmail();
         ClsDescriptarEncriptar encDesc = new ClsDescriptarEncriptar();
 
         public Boolean SendMailGmailRecuperarContrasena(string Run, string NombrePersona, string Asunto, string Correo,   string Clave)

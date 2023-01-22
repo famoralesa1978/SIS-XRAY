@@ -14,7 +14,7 @@ namespace SIS_XRAY
 	public partial class Site1 : System.Web.UI.MasterPage
 	{
 		Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
-		clsConexion cn = new Conexion.clsConexion();
+		private RealAumentada.clsConectorSqlServer cn = new RealAumentada.clsConectorSqlServer();
 		String strMensaje = "";
 		protected void Page_Load(object sender, EventArgs e)
 		{

@@ -2055,8 +2055,10 @@
     <Compile Include="Captcha.aspx.designer.cs">
       <DependentUpon>Captcha.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Clases\clsConector.cs" />
     <Compile Include="Clases\clsEmail.cs" />
     <Compile Include="Clases\classUsuario.cs" />
+    <Compile Include="Clases\clsUtiles.cs" />
     <Compile Include="Clases\clsUtilidades.cs" />
     <Compile Include="Contacto\Contacto.aspx.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>

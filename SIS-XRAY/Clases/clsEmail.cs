@@ -13,8 +13,8 @@ namespace Clases
 {
     class ClsEmail//prueba
     {
-        clsConexion cn = new Conexion.clsConexion();
-        ClsDescriptarEncriptar encDesc = new ClsDescriptarEncriptar();
+		private RealAumentada.clsConectorSqlServer cn = new RealAumentada.clsConectorSqlServer();
+		ClsDescriptarEncriptar encDesc = new ClsDescriptarEncriptar();
         private static string strDesde;
         private static string strCredencial;
         private static string strClave;
@@ -90,7 +90,7 @@ namespace Clases
             DataSet ds;
             cmd.CommandText = "pa_ConfCorreo_sel";
             cmd.CommandType = CommandType.Text;
-            ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
+            ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd);
 
             if(ds != null)
             {
