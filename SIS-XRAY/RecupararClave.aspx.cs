@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Conexion;
 using Utilidades;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,8 +14,8 @@ namespace SIS_XRAY
 {
     public partial class RecupararClave : System.Web.UI.Page
     {
-        clsConexion cn = new Conexion.clsConexion();        
-        Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
+		private RealAumentada.clsConectorSqlServer cn = new RealAumentada.clsConectorSqlServer();
+		Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
         Clases.clsUtilidades clsutil = new Clases.clsUtilidades();
        
         protected void Page_Load(object sender, EventArgs e)
@@ -39,7 +38,7 @@ namespace SIS_XRAY
                        " SELECT run,Razon_Social,Email,Clave " +
                        " FROM tbl_cliente_Historial WHERE run= '" + txtRut.Text + "'"
                 };
-                ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
+                ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd);
                 if (ds != null)
                 {
                     if (ds.Tables[0].Rows.Count > 0)

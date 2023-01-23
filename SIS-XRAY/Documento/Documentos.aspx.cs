@@ -1,4 +1,4 @@
-﻿using Conexion;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,6 +14,7 @@ namespace SIS_XRAY
 	public partial class Formulario_web11 : System.Web.UI.Page
 	{
 		ClsDescriptarEncriptar encDesc = new ClsDescriptarEncriptar();
+		private RealAumentada.clsConectorSqlServer cn = new RealAumentada.clsConectorSqlServer();
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			if (!IsPostBack)
@@ -26,15 +27,15 @@ namespace SIS_XRAY
 		}
 		public static String GetListadoAnno(HttpContext context)
 		{
-			clsConexion cn = new Conexion.clsConexion();
 			Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
-			String strMensaje = "";
+			RealAumentada.clsConectorSqlServer cn = new RealAumentada.clsConectorSqlServer();
+		String strMensaje = "";
 			Literal ltAnno = new Literal();
 			SqlCommand cmd = new SqlCommand();
 			DataSet ds;
 			cmd.CommandText =String.Format("pa_AnnoWEB '{0}',{1}", clsUsu.Rut,clsUsu.Id_Usuario);
 			cmd.CommandType = CommandType.Text;
-			ds = cn.Listar(System.Configuration.ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
+			ds = cn.Listar(System.Configuration.ConfigurationManager.AppSettings["ConnectionBD"], cmd);
 
 			if (strMensaje == "OK")
 			{
@@ -54,15 +55,15 @@ namespace SIS_XRAY
 
 		public void GetListadoAnno()
 		{
-			clsConexion cn = new Conexion.clsConexion();
-			Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
+			RealAumentada.clsConectorSqlServer cn = new RealAumentada.clsConectorSqlServer();
+		Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
 			String strMensaje = "";
 			Literal ltAnno = new Literal();
 			SqlCommand cmd = new SqlCommand();
 			DataSet ds;
 			cmd.CommandText = String.Format("pa_AnnoWEB '{0}',{1}", clsUsu.Rut, clsUsu.Id_Usuario);
 			cmd.CommandType = CommandType.Text;
-			ds = cn.Listar(System.Configuration.ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
+			ds = cn.Listar(System.Configuration.ConfigurationManager.AppSettings["ConnectionBD"], cmd);
 
 			if (strMensaje == "OK")
 			{
@@ -82,7 +83,6 @@ namespace SIS_XRAY
 		}
 		public void GetListadoTipoDocumento()
 		{
-			clsConexion cn = new Conexion.clsConexion();
 			Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
 			String strMensaje = "";
 			Literal ltAnno = new Literal();
@@ -90,7 +90,7 @@ namespace SIS_XRAY
 			DataSet ds;
 			cmd.CommandText = String.Format("pa_TipoDocumentoWEB");
 			cmd.CommandType = CommandType.Text;
-			ds = cn.Listar(System.Configuration.ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
+			ds = cn.Listar(System.Configuration.ConfigurationManager.AppSettings["ConnectionBD"], cmd);
 
 			if (strMensaje == "OK")
 			{
@@ -110,7 +110,6 @@ namespace SIS_XRAY
 
 		private void GetListaDocumento()
 		{
-			clsConexion cn = new Conexion.clsConexion();
 			Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
 			String strMensaje = "";
 			Literal ltAnno = new Literal();
@@ -118,7 +117,7 @@ namespace SIS_XRAY
 			DataSet ds;
 			cmd.CommandText = String.Format("pa_ListarDocumentoWEB '{0}',{1},{2},{3}", clsUsu.Rut, clsUsu.Id_Usuario, ListAnnio.Value, ListTipoDocumento.Value);
 			cmd.CommandType = CommandType.Text;
-			ds = cn.Listar(System.Configuration.ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
+			ds = cn.Listar(System.Configuration.ConfigurationManager.AppSettings["ConnectionBD"], cmd);
 
 			if (strMensaje == "OK")
 			{

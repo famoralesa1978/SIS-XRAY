@@ -6,7 +6,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Conexion;
 using System.Configuration;
 
 namespace SIS_XRAY
@@ -28,15 +27,15 @@ namespace SIS_XRAY
 		}
 		public static String GetListadoPersonal(HttpContext context)
 		{
-			clsConexion cn = new Conexion.clsConexion();
 			Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
-			String strMensaje = "";
+			RealAumentada.clsConectorSqlServer cn = new RealAumentada.clsConectorSqlServer();
+		String strMensaje = "";
 			Literal ltListaPersonal= new Literal();
 			SqlCommand cmd = new SqlCommand();
 			DataSet ds;
 			cmd.CommandText = "pa_ListarPersonalWEB '" + clsUsu.Rut + "'";
 			cmd.CommandType = CommandType.Text;
-			ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
+			ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd);
 
 			if (strMensaje == "OK")
 			{
@@ -60,15 +59,15 @@ namespace SIS_XRAY
 		}
 		public static String GetPersonalControlado(HttpContext context)
 		{
-			clsConexion cn = new Conexion.clsConexion();
 			Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
-			String strMensaje = "";
+			 RealAumentada.clsConectorSqlServer cn = new RealAumentada.clsConectorSqlServer();
+		String strMensaje = "";
 			Literal ltListaPersonal = new Literal();
 			SqlCommand cmd = new SqlCommand();
 			DataSet ds;
 			cmd.CommandText = "pa_PersonalControloadoPorTriWEB '" + clsUsu.Rut + "'," + clsUsu.Id_Usuario.ToString();
 			cmd.CommandType = CommandType.Text;
-			ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
+			ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd);
 
 			if (strMensaje == "OK")
 			{

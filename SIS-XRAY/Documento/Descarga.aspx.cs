@@ -1,5 +1,4 @@
-﻿using Conexion;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -17,15 +16,15 @@ namespace SIS_XRAY
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			string parametro = encDesc.DecryptTripleDES(Request.QueryString["P"]);
-			clsConexion cn = new Conexion.clsConexion();
-			Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
+			RealAumentada.clsConectorSqlServer cn = new RealAumentada.clsConectorSqlServer();
+		Clases.ClsUsuario clsUsu = new Clases.ClsUsuario();
 			String strMensaje = "";
 			Literal ltAnno = new Literal();
 			SqlCommand cmd = new SqlCommand();
 			DataSet ds;
 			cmd.CommandText = String.Format("pa_CargarDocumentoWEB {0}", parametro);
 			cmd.CommandType = CommandType.Text;
-			ds = cn.Listar(System.Configuration.ConfigurationManager.AppSettings["ConnectionBD"], cmd, ref strMensaje);
+			ds = cn.Listar(System.Configuration.ConfigurationManager.AppSettings["ConnectionBD"], cmd);
 
 			if (strMensaje == "OK")
 			{

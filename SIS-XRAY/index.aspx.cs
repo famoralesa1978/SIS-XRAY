@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Conexion;
 using Utilidades;
 using System.Data;
 using System.Data.SqlClient;
@@ -47,35 +46,28 @@ namespace SIS_XRAY
 			cmd.CommandType = CommandType.Text;
 			ds = cn.Listar(ConfigurationManager.AppSettings["ConnectionBD"], cmd);
 
-			if (strMensaje == "OK")
+			if (ds !=null)
 			{
-				switch (ds.Tables[0].Rows.Count)
+				if (ds.Tables[0].Rows.Count > 0)
 				{
-					case 0://el usuario  o contraseña no existe                         
-
-						string javaScript = "Mensaje();";
-						ScriptManager.RegisterStartupScript(this, this.GetType(), "script", javaScript, true);
-
-						break;
-					case 1://cuando tiene un solo perfil asociado
-								 //rut,Contraseña as clave,Id_perfil
-						clsUsu.Usuario = usr;
-						clsUsu.Id_perfil = Convert.ToInt16(ds.Tables[0].Rows[0]["Id_perfil"].ToString());
-						clsUsu.Perfil = ds.Tables[0].Rows[0]["Descripcion"].ToString();
-						clsUsu.Nombre = ds.Tables[0].Rows[0]["Razon_Social"].ToString();
-						clsUsu.Rut = ds.Tables[0].Rows[0]["rut"].ToString();
-						clsUsu.Id_Usuario= ds.Tables[0].Rows[0]["Id_cliente"].ToString(); //
-						clsUsu.Email = ds.Tables[0].Rows[0]["Email"].ToString();                                                                // TransferirSegunPerfil(usr);
-						Response.Redirect("Principal.aspx");
-						break;
-					default://cuando tiene mas perfiles asociado.
-
-						break;
+					clsUsu.Usuario = usr;
+					clsUsu.Id_perfil = Convert.ToInt16(ds.Tables[0].Rows[0]["Id_perfil"].ToString());
+					clsUsu.Perfil = ds.Tables[0].Rows[0]["Descripcion"].ToString();
+					clsUsu.Nombre = ds.Tables[0].Rows[0]["Razon_Social"].ToString();
+					clsUsu.Rut = ds.Tables[0].Rows[0]["rut"].ToString();
+					clsUsu.Id_Usuario = ds.Tables[0].Rows[0]["Id_cliente"].ToString(); //
+					clsUsu.Email = ds.Tables[0].Rows[0]["Email"].ToString();                                                                // TransferirSegunPerfil(usr);
+					Response.Redirect("Principal.aspx");
+				}
+				else
+				{
+					string javaScript = "Mensaje('El usuario no existe o contraseña incorrecta');";
+					ScriptManager.RegisterStartupScript(this, this.GetType(), "script", javaScript, true);
 				}
 			}
 			else
 			{
-				System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('" + strMensaje.Replace("'", "") + "');", true);
+				System.Web.UI.ScriptManager.RegisterStartupScript(this, GetType(), "Mensaje", "alert('Error en la conexion');", true);
 			}
 
 		}
